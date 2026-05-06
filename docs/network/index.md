@@ -17,7 +17,7 @@ Things that once you know, you work and move different in your career, field, et
 
 ## Posts
 
-- [Basic Network Concepts](../blog/post/network/basic-network1.md)  
+- [Basic Network Concepts (Part I)](../blog/post/network/basic-network1.md)  
   _How does these app communicates, what's the role of network in wht we build_
 
 *(More Network knowledge on the way...)*
