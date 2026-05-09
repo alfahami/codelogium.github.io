@@ -37,7 +37,10 @@ code span {
 
 /* Typography Styles */
 .md-typeset h1 { font-size: 2rem; }
-.md-typeset h2 { font-size: 1.4rem; }
+.md-typeset h2 { 
+  font-size: 1.4rem; 
+  margin-top: 0.8em;
+}
 .md-typeset h3 { font-size: 1rem; }
 .md-typeset { font-size: 0.75rem; line-height: 1.6; }
 
@@ -98,10 +101,10 @@ blockquote {
 blockquote:before {
   color: #00645A;
   content: open-quote;
-  font-size: 4em;
+  font-size: 2.5em;
   line-height: 0.1em;
   margin-right: 0.25em;
-  vertical-align: -0.4em;
+  vertical-align: -0.3em;
 }
 
 blockquote p {

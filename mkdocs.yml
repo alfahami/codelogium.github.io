@@ -68,6 +68,9 @@ nav:
       - Overview: lab/index.md
       - Git & GitHub:
         - Overview: lab/git/index.md
+        - Basics & Daily Commands: lab/git/basics.md
+        - Branches, Stash & Undoing: lab/git/branching-stash.md
+        - Remotes, GitHub & Workflows: lab/git/remotes-workflows.md
   - Blog:
       - Overview: blog/index.md
       - Random Thought: blog/random-thought.md
