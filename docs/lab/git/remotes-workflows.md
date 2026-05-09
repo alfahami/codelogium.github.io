@@ -8,9 +8,7 @@ description: "Push, pull, SSH setup, fork workflows, multiple Git identities, di
 tags:
   - Git
   - GitHub
-  - SSH
-  - Remote
-  - Fork
+  - Workflow
 reading_time: 8
 ---
 
