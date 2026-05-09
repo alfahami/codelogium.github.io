@@ -15,7 +15,7 @@ This is the **Java** corner of Codelogium — where I log things I’ve explored
 
 ## Posts
 
-- [Generic Types in Java](../blog/post/java/generic-types.md)  
+- [Generic Types in Java](generic-types.md)  
   _“Write once, use many” — Generics let you write flexible and reusable code._
 
 *(More Java thoughts coming soon...)*

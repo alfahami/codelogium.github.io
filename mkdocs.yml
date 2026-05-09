@@ -37,7 +37,7 @@ markdown_extensions:
   - toc:
       title: "Table of content"
       permalink: "¶"
-      permalink_title: Permalink 
+      permalink_title: Permalink
       toc_depth: "1-6"
   - admonition
   - pymdownx.superfences
@@ -47,30 +47,29 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - tables
-  
+
 nav:
   - Home: index.md
-  - Network: 
-    - Overview: network/index.md
-    - Basic Network Concepts (Part I): blog/post/network/basic-network1.md
-
+  - Network:
+      - Overview: network/index.md
+      - Basic Network Concepts (Part I): network/basic-network1.md
   - Databases:
       - Overview: databases/index.md
-      - Postgres vs H2: blog/post/database/postgres-vs-h2.md
-      - Hibernate Tips: blog/post/database/hibernate-tips.md
-  - Java: 
+      - Postgres vs H2: databases/postgres-vs-h2.md
+      - Hibernate Tips: databases/hibernate-tips.md
+  - Java:
       - java/index.md
-      - blog/post/java/generic-types.md
+      - java/generic-types.md
   - Spring:
       - Overview: spring/index.md
       - JWT Auth: spring/jwt-auth.md
   - Lab:
       - Overview: lab/index.md
       - Git:
-        - Overview: lab/git/index.md
-        - Basics & Daily Commands: lab/git/basics.md
-        - Branches, Stash & Undoing: lab/git/branching-stash.md
-        - Remotes, GitHub & Workflows: lab/git/remotes-workflows.md
+          - Overview: lab/git/index.md
+          - Basics & Daily Commands: lab/git/basics.md
+          - Branches, Stash & Undoing: lab/git/branching-stash.md
+          - Remotes & Workflows: lab/git/remotes-workflows.md
   - Blog:
       - Overview: blog/index.md
       - Random Thought: blog/random-thought.md
@@ -94,9 +93,9 @@ extra:
       link: https://www.linkedin.com/in/alfahami
       name: alfahami on LinkedIn
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/al_fahami 
+      link: https://twitter.com/al_fahami
       name: alfahami on X (ex Twitter)
-  analytics: 
+  analytics:
     provider: google
     property: G-XXXXXXXXXX
     feedback:
@@ -110,11 +109,11 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
+          note: >-
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
-        
-copyright: © 2025 <a href="https://codelogium.github.io/">Codelogium</a> • Crafted with curiosity accompanied by a cup of tea ☕<br> 
+
+copyright: © 2025 <a href="https://codelogium.github.io/">Codelogium</a> • Crafted with curiosity accompanied by a cup of tea ☕<br>
         Built with ♥ using <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">MkDocs Material</a>
 
 extra_css:
@@ -122,7 +121,7 @@ extra_css:
 
 extra_javascript:
   - javascript/extra.js
-  
+
 plugins:
   - search:
   - awesome-pages:
@@ -139,13 +138,13 @@ plugins:
       enabled: true
   - git-revision-date-localized:
       fallback_to_build_date: true
-      type: timeago  # or 'timeago', 'datetime'
+      type: timeago
       enable_creation_date: true
-      enable_git_follow: false
-
+      enable_git_follow: true
       exclude:
+        - index.md
         - network/index.md
-        - java/index.md    
+        - java/index.md
         - spring/index.md
         - databases/index.md
         - lab/index.md
