@@ -52,7 +52,7 @@ nav:
   - Home: index.md
   - Network: 
     - Overview: network/index.md
-    - Basic Network Concepts (Part I): blog/network/basic-network1.md
+    - Basic Network Concepts (Part I): blog/post/network/basic-network1.md
 
   - Databases:
       - Overview: databases/index.md
@@ -66,6 +66,8 @@ nav:
       - JWT Auth: spring/jwt-auth.md
   - Lab:
       - Overview: lab/index.md
+      - Git & GitHub:
+        - Overview: lab/git/index.md
   - Blog:
       - Overview: blog/index.md
       - Random Thought: blog/random-thought.md
@@ -134,7 +136,7 @@ plugins:
       fallback_to_build_date: true
       type: timeago  # or 'timeago', 'datetime'
       enable_creation_date: true
-      follow_renames: false  
+      enable_git_follow: false
 
       exclude:
         - index.md

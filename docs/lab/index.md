@@ -21,13 +21,9 @@ Dive in, and start building!
 
 ---
 
-## Posts
+## What's Inside
 
-- [Simple Crypto Portfolio Project](../lab/post/crypto-portfolio.md)  
-  _A small project to track and display crypto holdings — mostly for fun, learning, and a bit of frontend/backend experimentation._
+- [Git & GitHub](git/index.md)  
+  _Commands, workflows, and solutions from real experience._
 
-- [Intro to Docker](../lab/post/docker-intro.md)  
-  _A crash course on containers, images, and why I finally stopped avoiding Docker._
-
-*(More experiments coming soon...)*
-```
+*(More tools coming soon — Docker, CI/CD, Linux...)*
