@@ -23,7 +23,7 @@ Dive in, and start building!
 
 ## What's Inside
 
-- [Git & GitHub](git/index.md)  
+- [Git](git/index.md)  
   _Commands, workflows, and solutions from real experience._
 
 *(More tools coming soon — Docker, CI/CD, Linux...)*

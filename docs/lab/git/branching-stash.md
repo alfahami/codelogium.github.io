@@ -19,6 +19,7 @@ reading_time: 6
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
+               <a href="/categories/workflow/"><em>Workflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~6 min read</span>
     </span>
   </div>

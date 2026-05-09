@@ -22,9 +22,9 @@ summary: |
   <div class="blog-meta-container">
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/java/"><em>Java</em></a>&nbsp;•&nbsp;  
-         <a href="/categories/programming/"><em>Programming</em></a>&nbsp;•&nbsp; 
-         <a href="/categories/programming/"><em>OOP</em></a>&nbsp;•&nbsp;  
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/java/"><em>java</em></a>&nbsp;•&nbsp;  
+         <a href="/categories/programming/"><em>programming</em></a>&nbsp;•&nbsp; 
+         <a href="/categories/programming/"><em>oop</em></a>&nbsp;•&nbsp;  
       ⏱️ ~5 min read</span>
     </span>
   </div>

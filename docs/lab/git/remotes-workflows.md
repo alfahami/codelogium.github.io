@@ -20,7 +20,11 @@ reading_time: 8
   <div class="blog-meta-container">
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
+               <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
+             <a href="/categories/ssh/"><em>ssh</em></a>&nbsp;•&nbsp;
+                      <a href="/categories/remotes/"><em>remotes</em></a>&nbsp;•&nbsp;
+
       ⏱️ ~8 min read</span>
     </span>
   </div>

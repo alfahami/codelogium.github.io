@@ -20,9 +20,8 @@ reading_time: 3
   <div class="blog-meta-container">
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
-         <a href="/categories/github/"><em>GitHub</em></a>&nbsp;•&nbsp;
-         <a href="/categories/workflow/"><em>Workflow</em></a>&nbsp;•&nbsp;
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
+         <a href="/categories/workflow/"><em>gorkflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~3 min read</span>
     </span>
   </div>
