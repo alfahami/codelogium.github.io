@@ -139,7 +139,7 @@ plugins:
       enable_git_follow: false
 
       exclude:
-        - index.md
+        - network/index.md
         - java/index.md    
         - spring/index.md
         - databases/index.md
