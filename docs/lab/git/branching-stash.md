@@ -55,7 +55,7 @@ git push --set-upstream origin <name>            # Push and set upstream in one 
 ### Merging
 
 ```bash
-git merge <branch>                               # Merge branch into current (be on target branch)
+git merge <branch> # Merge branch into current (be on target branch)
 ```
 
 ---

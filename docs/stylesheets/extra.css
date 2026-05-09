@@ -1,22 +1,59 @@
-/* Google Fonts */
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
-/* Global Colors */
+/* ============================================================
+   GLOBAL COLORS — Premium Deep Green Theme
+   ============================================================ */
 :root {
-  --md-primary-fg-color: #358544;
-  --md-primary-fg-color--light: #CCE0D0;
-  --md-primary-fg-color--dark: #35856C;
+  /* Primary — forest green, confident and mature */
+  --md-primary-fg-color:        #1B6B45;
+  --md-primary-fg-color--light: #E8F5EE;
+  --md-primary-fg-color--dark:  #124D32;
+
+  /* Accent — electric teal, sharp contrast */
+  --md-accent-fg-color:              #0BC4A0;
+  --md-accent-fg-color--transparent: rgba(11, 196, 160, 0.12);
+
+  /* Backgrounds — barely-there green tint */
+  --md-default-bg-color:          #FAFCFB;
+  --md-default-bg-color--light:   #F3F8F5;
+  --md-default-bg-color--lighter: #F8FBFA;
+
+  /* Text — deep forest, warm not cold */
+  --md-default-fg-color:          #132218;
+  --md-default-fg-color--light:   #3D5C48;
+  --md-default-fg-color--lighter: #6B8C78;
+
+  /* Borders */
+  --md-border-color:  #D4EAD9;
+  --md-divider-color: #C8E4CE;
+
+  /* States */
+  --md-hover-color:  #E0F0E6;
+  --md-active-color: #C8E4CE;
+
+  /* Code */
+  --md-code-bg-color: #EEF5F0;
+  --md-code-fg-color: #1B3D28;
+
+  /* Shadows & Selection */
+  --md-shadow-color:        rgba(27, 107, 69, 0.10);
+  --md-selection-bg-color:  rgba(27, 107, 69, 0.18);
 }
 
-/* Font Families */
+/* ============================================================
+   FONT FAMILIES
+   ============================================================ */
 body,
 input,
 button,
 select,
 textarea {
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
 }
 
 code,
@@ -35,25 +72,29 @@ code span {
   font-weight: 700;
 }
 
-/* Typography Styles */
-.md-typeset h1 { font-size: 2rem; }
-.md-typeset h2 { 
-  font-size: 1.4rem; 
-  margin-top: 0.8em;
-}
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.md-typeset h1 { font-size: 2rem; letter-spacing: -0.02em; }
+.md-typeset h2 { font-size: 1.4rem; margin-top: 0.8em; }
 .md-typeset h3 { font-size: 1rem; }
-.md-typeset { font-size: 0.75rem; line-height: 1.6; }
+.md-typeset    { font-size: 0.75rem; line-height: 1.6; }
 
-/* Change nav fonts and size */
-.md-tabs__link, 
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.md-tabs__link,
 .md-header__title,
-.md-header-nav .md-nav__link a
- {
+.md-header-nav .md-nav__link a {
   font-weight: bold !important;
   font-family: 'Poppins', sans-serif !important;
 }
 
-/* Hide Categories in toc of blog pages */
+.md-nav__link {
+  font-size: 0.65rem;
+}
+
+/* Hide Categories in TOC */
 .md-nav__link[href="#categories"] {
   display: none;
 }
@@ -65,12 +106,9 @@ code span {
   border-bottom: 2px solid white !important;
 }
 
-.md-nav__link {
-  font-size: 0.65rem; /* adjust as needed */
-}
-
-
-/* Code Block Styles */
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
 .markdown-body pre {
   background: rgba(0, 0, 0, 0.7);
   color: #e0e0e0;
@@ -88,7 +126,32 @@ code span {
   font-family: 'Source Code Pro', monospace !important;
 }
 
-/* Blockquotes */
+.md-typeset pre code {
+  line-height: 1.6;
+}
+
+/* Scrollbar styling */
+.md-typeset pre {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-border-color) transparent;
+}
+
+.md-typeset pre::-webkit-scrollbar {
+  height: 4px;
+}
+
+.md-typeset pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.md-typeset pre::-webkit-scrollbar-thumb {
+  background: var(--md-border-color);
+  border-radius: 4px;
+}
+
+/* ============================================================
+   BLOCKQUOTES
+   ============================================================ */
 blockquote {
   background-color: #f9f9f9;
   border-left: 8px solid #00645A;
@@ -111,17 +174,7 @@ blockquote p {
   display: inline;
 }
 
-/* Custom Admonition (Tip) Style */
-.md-typeset .admonition.tip {
-  border-left: 5px solid #2dd4bf;
-}
-
-/* Custom Admonition (Info) Style */
-.md-typeset details.info p {
-  font-size: .65rem !important;
-}
-
-/* Blockquotes with Slate color scheme */
+/* Blockquotes — dark mode */
 body[data-md-color-scheme="slate"] blockquote {
   background-color: #00645A;
   border-left: 8px solid #e1e1e1 !important;
@@ -136,7 +189,20 @@ body[data-md-color-scheme="slate"] blockquote:before {
   color: #e1e1e1;
 }
 
-/* Blog Meta */
+/* ============================================================
+   ADMONITIONS
+   ============================================================ */
+.md-typeset .admonition.tip {
+  border-left: 5px solid #2dd4bf;
+}
+
+.md-typeset details.info p {
+  font-size: .65rem !important;
+}
+
+/* ============================================================
+   BLOG META
+   ============================================================ */
 .blog-meta {
   font-size: 0.72rem;
   color: #666;
@@ -171,25 +237,32 @@ body[data-md-color-scheme="slate"] blockquote:before {
   text-decoration: none;
 }
 
-/* Hide categories section initially */
+/* ============================================================
+   CONTENT VISIBILITY
+   ============================================================ */
+
+/* Hide categories section */
 #categories,
 #categories+ul,
 #categories+ul li a {
   display: none !important;
 }
 
-/* Hide contributors and feedback sections by default */
+/* Hide contributors and feedback by default */
 .md-source-file,
 .md-feedback {
   display: none !important;
 }
 
-/* Show contributors and feedback when 'show-contrib-feedback' class is added to body */
+/* Show on content pages via JS */
 .show-contrib-feedback .md-source-file,
 .show-contrib-feedback .md-feedback {
   display: block !important;
 }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
   .blog-meta-container {
     display: block;
@@ -197,9 +270,11 @@ body[data-md-color-scheme="slate"] blockquote:before {
   }
 }
 
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .md-footer {
-  background: var(--md-primary-fg-color);
+  background: var(--md-primary-fg-color--dark);
   color: white;
   padding: 2rem 1rem;
   font-size: 0.9rem;
@@ -207,7 +282,7 @@ body[data-md-color-scheme="slate"] blockquote:before {
 }
 
 .md-footer a {
-  color: #cccccc;
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: color 0.2s ease;
 }
