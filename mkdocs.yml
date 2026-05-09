@@ -72,8 +72,7 @@ nav:
           - Remotes & Workflows: lab/git/remotes-workflows.md
   - Blog:
       - Overview: blog/index.md
-      - Random Thought: blog/random-thought.md
-      - Things I Learned: blog/things-i-learned.md
+      - MkDocs Creation Date Bug: blog/posts/mkdocs-creation-date-debug.md
   - Categories:
       - Overview: categories/index.md
       - Java: categories/java.md
@@ -126,6 +125,7 @@ plugins:
   - search:
   - awesome-pages:
   - blog:
+      authors: true
   - blogging:
   - categories:
       enabled: true
