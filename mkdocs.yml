@@ -97,7 +97,7 @@ extra:
       name: alfahami on X (ex Twitter)
   analytics:
     provider: google
-    property: G-XXXXXXXXXX
+    property: G-9L21ZFFY2J
     feedback:
       title: Was this page helpful?
       ratings:
