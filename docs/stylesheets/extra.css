@@ -261,11 +261,6 @@ body[data-md-color-scheme="slate"] blockquote:before {
 }
 
 /* Git committers avatar */
-.md-typeset a.md-author img {
-  all: unset;
-}
-
-/* Git committers avatar */
 .md-source-file__fact img {
   border: 2px solid var(--md-primary-fg-color--light);
   border-radius: 50%;
