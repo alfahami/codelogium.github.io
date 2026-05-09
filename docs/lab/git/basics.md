@@ -3,7 +3,6 @@ title: "Basics & Daily Commands"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
   - Workflow
 description: "The git commands you use every day — init, add, commit, status, .gitignore, aliases, and commit message conventions."
 tags:
@@ -20,7 +19,9 @@ reading_time: 5
   <div class="blog-meta-container">
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
+               <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
+
       ⏱️ ~5 min read</span>
     </span>
   </div>

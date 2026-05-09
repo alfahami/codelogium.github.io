@@ -3,7 +3,6 @@ title: "Branches, Stash & Undoing"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
   - Workflow
 description: "Branching strategies, stash workflows, reverting commits, resetting history, and inspecting specific commits."
 tags:
@@ -20,6 +19,7 @@ reading_time: 6
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
+               <a href="/categories/workflow/"><em>Workflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~6 min read</span>
     </span>
   </div>
@@ -55,7 +55,7 @@ git push --set-upstream origin <name>            # Push and set upstream in one 
 ### Merging
 
 ```bash
-git merge <branch>                               # Merge branch into current (be on target branch)
+git merge <branch> # Merge branch into current (be on target branch)
 ```
 
 ---

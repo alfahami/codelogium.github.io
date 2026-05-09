@@ -1,38 +1,37 @@
 ---
-title: "Git & GitHub"
+title: "Git"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
+  - Remote
+  - SSH
   - Workflow
 description: "A practical reference built from real experience — commands, workflows, and solutions that actually came up."
 tags:
   - Git
-  - GitHub
-  - Version Control
+  - VCS (Version Control System)
   - Workflow
 reading_time: 3
 ---
 
-# Git & GitHub
+# Git
 
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
       By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
-         <a href="/categories/github/"><em>GitHub</em></a>&nbsp;•&nbsp;
-         <a href="/categories/workflow/"><em>Workflow</em></a>&nbsp;•&nbsp;
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
+         <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~3 min read</span>
     </span>
   </div>
 </div>
 
-> "Version control is not just a tool — it's a habit."
+> "Version control is not just a tool, it's a habit."
 
 Git is a **distributed version control system** for tracking changes in files, coordinating work across multiple developers, and reverting to any point in history. GitHub extends that with remote hosting, collaboration, and workflow automation.
 
-This section is a **living reference** — not a tutorial. Every entry here came from a real situation: a merge gone wrong, a stale creation date, a pushed commit that shouldn't have been, a branch tracking the wrong remote. If it happened, it's here.
+This section is a **living reference**, not a tutorial. Every entry here came from a real situation: a merge gone wrong, a stale creation date, a pushed commit that shouldn't have been, a branch tracking the wrong remote. If it happened, it's here.
 
 ---
 
@@ -40,7 +39,7 @@ This section is a **living reference** — not a tutorial. Every entry here came
 
 **[Basics & Daily Commands](basics.md)**
 
-The commands you run every day — init, add, commit, status, .gitignore, aliases, and commit message conventions.
+The commands you run every day: init, add, commit, status, .gitignore, aliases, and commit message conventions.
 
 ---
 
@@ -58,7 +57,7 @@ Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branch
 
 ## Quick Reference
 
-The commands you reach for daily — no need to open a full article:
+The commands you reach for daily, no need to open a full article:
 
 ```bash
 git status                        # what's going on
