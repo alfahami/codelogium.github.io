@@ -3,8 +3,6 @@ title: "Git"
 date: 2026-05-09
 categories:
   - Git
-  - Remote
-  - SSH
   - Workflow
 description: "A practical reference built from real experience — commands, workflows, and solutions that actually came up."
 tags:

@@ -1,4 +1,6 @@
 ---
+title: "Blog"
+date: 2026-05-09
 hide:
   - navigation
   - toc
@@ -13,14 +15,3 @@ Here, you’ll find posts that don’t quite fit under a specific tech category.
 
 ## Posts
 
-- [Random Thought](random-thought.md)  
-  _Some spontaneous thoughts that might (or might not) make sense._
-
-- [Things I Learned](things-i-learned.md)  
-  _A growing list of small lessons, aha-moments, or reminders to my future self._
-
----
-
-> _Not all who wander are lost — some are just debugging._
-
-*(More posts coming soon...)*
