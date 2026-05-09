@@ -3,7 +3,6 @@ title: "Remotes, GitHub & Workflows"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
   - Workflow
 description: "Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branches, skip-worktree, assume-unchanged, LFS, and gist transfer."
 tags:

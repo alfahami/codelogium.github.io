@@ -66,7 +66,7 @@ nav:
       - JWT Auth: spring/jwt-auth.md
   - Lab:
       - Overview: lab/index.md
-      - Git & GitHub:
+      - Git:
         - Overview: lab/git/index.md
         - Basics & Daily Commands: lab/git/basics.md
         - Branches, Stash & Undoing: lab/git/branching-stash.md
@@ -80,6 +80,8 @@ nav:
       - Java: categories/java.md
       - Programming: categories/programming.md
       - OOP: categories/oop.md
+      - Git: categories/git.md
+      - Workflow: categories/workflow.md
 
 extra:
   pagetime: 'on'

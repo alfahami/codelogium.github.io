@@ -3,7 +3,6 @@ title: "Branches, Stash & Undoing"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
   - Workflow
 description: "Branching strategies, stash workflows, reverting commits, resetting history, and inspecting specific commits."
 tags:

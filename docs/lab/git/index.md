@@ -1,20 +1,20 @@
 ---
-title: "Git & GitHub"
+title: "Git"
 date: 2026-05-09
 categories:
   - Git
-  - GitHub
+  - Remote
+  - SSH
   - Workflow
 description: "A practical reference built from real experience — commands, workflows, and solutions that actually came up."
 tags:
   - Git
-  - GitHub
-  - Version Control
+  - VCS (Version Control System)
   - Workflow
 reading_time: 3
 ---
 
-# Git & GitHub
+# Git
 
 <div class="blog-meta">
   <div class="blog-meta-container">
