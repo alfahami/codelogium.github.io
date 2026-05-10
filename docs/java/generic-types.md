@@ -1,6 +1,7 @@
 ---
 title: "Generic Types in Java"
 date: 2025-05-07
+description: "Explore how Java generics work across interfaces and classes."
 categories:
   - Java
   - Programming
