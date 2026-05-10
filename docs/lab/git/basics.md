@@ -211,3 +211,26 @@ git show <commit-hash> -- path/to/file           # Specific file from a commit
 git diff                                         # Unstaged changes
 git diff --staged                                # Staged changes
 ```
+
+---
+
+## Inspecting Code Authorship
+
+```bash
+git blame <file>                                 # show who wrote each line and when
+git blame -L 381,381 <file>                      # blame a specific line only
+git blame -L 100,120 <file>                      # blame a range of lines
+```
+
+??? tip "Real Use Case"
+    When a build breaks and you need to find who introduced the change:
+```bash
+    git blame -L 381,381 src/main/java/com/example/MyService.java
+    # fab986cd (Nitika Garg 2026-04-27 13:42:47 +0530 381) problematic code here
+```
+    You get the commit hash, author name, timestamp, and the exact line —
+    enough to track down who made the change and when, then cross-reference with `git show`:
+```bash
+    git show fab986cd                            # see the full diff of that commit
+    git show fab986cd --stat                     # just the files changed
+```
