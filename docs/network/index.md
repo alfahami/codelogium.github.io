@@ -1,5 +1,6 @@
 ---
 title: Network
+description: "The Lab — practical references, cheatsheets, and guides for tools like Git, Docker, and CI/CD workflows."
 hide:
   - toc
   - navigation

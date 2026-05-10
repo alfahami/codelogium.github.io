@@ -1,5 +1,6 @@
 ---
 title: Java
+description: "Java notes, patterns, and deep dives — generics, OOP, collections, and more from real coding experience."
 hide:
   - toc
   - navigation
