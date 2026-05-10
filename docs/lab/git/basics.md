@@ -226,7 +226,7 @@ git blame -L 100,120 <file>                      # blame a range of lines
     When a build breaks and you need to find who introduced the change:
 ```bash
     git blame -L 381,381 src/main/java/com/example/MyService.java
-    # fab986cd (Nitika Garg 2026-04-27 13:42:47 +0530 381) problematic code here
+    # fab986cd (Nitika Doe 2026-04-27 13:42:47 +0530 381) problematic code here
 ```
     You get the commit hash, author name, timestamp, and the exact line —
     enough to track down who made the change and when, then cross-reference with `git show`:
