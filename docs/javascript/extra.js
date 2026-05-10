@@ -21,3 +21,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('show-contrib-feedback');
   }
 });
+
+// Translate Page Widget
+function addTranslateWidget() {
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  document.body.appendChild(script);
+  
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'fr,ar,es',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  };
+}

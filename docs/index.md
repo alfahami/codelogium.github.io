@@ -11,7 +11,7 @@ hide:
 # Home
 
 ## Welcome to **Codelogium** 🧠
-
+<div id="google_translate_element"></div>
 <blockquote>
   <p>Where true craftsmanship lasts.</p><br>
   <p>&emsp;&emsp;&nbsp;&nbsp;<strong>Unlearn. Relearn. Keep learning.</strong></p>
