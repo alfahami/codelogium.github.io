@@ -307,3 +307,83 @@ git push
 ```
 
 See: [Git HowTo: revert a pushed commit](https://christoph.ruegg.name/blog/git-howto-revert-a-commit-already-pushed-to-a-remote-reposit.html)
+
+---
+
+## Hard Reset to Match Upstream Exactly
+
+When your branch has diverged too far and you want to discard everything and match upstream exactly:
+
+```bash
+git fetch upstream <branch>                      # fetch latest from upstream
+git reset --hard upstream/<branch>               # discard ALL local changes
+git push --force origin <branch>                 # update your fork to match
+```
+
+!!! warning
+    This is destructive — all local commits and changes are permanently lost. Only use when you're sure you want to throw everything away and start from upstream's state.
+
+!!! tip "Save your work first"
+    If you want to keep your changes but still reset:
+    ```bash
+    git stash push -m "wip/my-changes"           # save your work
+    git fetch upstream <branch>
+    git reset --hard upstream/<branch>
+    git stash pop                                # re-apply your changes
+    # resolve any conflicts
+    git add .
+    git commit -m "feat: reapply changes on top of upstream"
+    git push origin <branch>
+    ```
+
+---
+
+## Moving or Retargeting a Pull Request
+
+### Change the base branch on GitHub (easiest)
+
+If you just need to retarget an existing PR to merge into a different branch — no git commands needed:
+
+Go to your PR on GitHub → **Edit** (pencil icon next to title) → change the **base branch** → confirm.
+
+### PR closed after upstream rebase
+
+When the maintainer rebases the base branch, GitHub rewrites commit hashes. Your PR may be **automatically closed** because the original commits no longer exist. Fix:
+
+```bash
+git fetch upstream <new-base-branch>
+git checkout -b feat/resubmit-branch upstream/<new-base-branch>
+git cherry-pick <your-commit-hash>               # bring your changes over
+git push origin feat/resubmit-branch
+```
+
+Then open a new PR from `feat/resubmit-branch` and close the old one.
+
+### Rebase your PR branch onto a new base
+
+If the base branch changed and you want to move your commits on top of it:
+
+```bash
+git fetch origin
+git rebase --onto <new-base> <old-base> <your-pr-branch>
+git push --force origin <your-pr-branch>
+```
+
+Then update the PR's base branch on GitHub.
+
+---
+
+## Git Garbage Collection
+
+Git sometimes runs automatic cleanup (`auto packing`) in the background to optimize repository storage. On Windows you may see:
+
+```
+Unlink of file '.git/objects/pack/pack-xxx.pack' failed. Should I try again? (y/n)
+```
+
+Press **`n`** — this is just a file lock issue on Windows, not an error. Your actual git operation (fetch, push, etc.) completed successfully. Run manual cleanup later if needed:
+
+```bash
+git gc                                           # manual garbage collection
+git gc --aggressive                              # deeper cleanup, takes longer
+```

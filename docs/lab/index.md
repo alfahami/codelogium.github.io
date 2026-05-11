@@ -9,7 +9,7 @@ hide:
 
 # 🧪 **Lab**
 
-Welcome to the **Lab** — the playground of Codelogium.
+Welcome to the **Lab**: the playground of Codelogium.
 
 This is the space where theory meets practice.<br> 
 Here, you’ll find quick guides, cheatsheets, and hands-on examples designed to help you tackle real-world challenges. 
