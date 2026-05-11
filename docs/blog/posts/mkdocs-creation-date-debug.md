@@ -7,7 +7,7 @@ categories:
   - MkDocs
   - Git
   - Debugging
-description: "A full debugging story of why a brand new article was showing 11 months ago as its creation date on a MkDocs Material site — and everything I tried before finding the real fix."
+description: "A full debugging story of why a brand new article was showing 11 months ago as its creation date on a MkDocs Material site, and everything I tried before finding the real fix."
 reading_time: 8
 ---
 
@@ -41,7 +41,7 @@ plugins:
 
 ---
 
-## What I Tried First — And Why It Didn't Work
+## What I Tried First And Why It Didn't Work
 
 ### Theory 1: Wrong date in front matter
 
@@ -61,7 +61,7 @@ At this point it was clear this wasn't a cache issue.
 
 ---
 
-## Finding the Real Cause — Git History
+## Finding the Real Cause: Git History
 
 Running `git log` without `--follow` on the new file showed only one clean commit from today. No old history.
 
@@ -114,11 +114,11 @@ This was the real fix. Once the upstream remote was gone, the plugin had no old 
 
 ---
 
-## But Wait — Dates Still Weren't Showing
+## But Wait, Dates Still Weren't Showing
 
 Even after fixing the git history issue, some pages weren't showing any dates at all. The plugin was running, the files were committed, but the footer was empty.
 
-Inspecting the page source revealed the `.md-source-file` element was there in the DOM — but hidden. 
+Inspecting the page source revealed the `.md-source-file` element was there in the DOM, but hidden. 
 
 The culprit was in `extra.css`:
 
@@ -180,7 +180,7 @@ if (!isOverviewPage) {
 Along the way I also learned:
 
 - `git log --all --follow` vs `git log`, the `--all` flag includes all remotes, `--follow` traces renames. Use both when debugging date issues
-- The `git-committers` plugin and `git-revision-date-localized` are separate — one handles author avatars, the other handles dates. They can fail independently
+- The `git-committers` plugin and `git-revision-date-localized` are separate, one handles author avatars, the other handles dates. They can fail independently
 - MkDocs `--dirtyreload` flag is useful for faster local development but can serve stale plugin data, sometimes a full restart is needed
 
 ---

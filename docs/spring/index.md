@@ -10,7 +10,7 @@ hide:
 
 # 🌱 Spring
 
-Spring things live here — from security configs to REST tips and whatever else comes up while working with the Spring framework.
+Spring things live here, from security configs to REST tips and whatever else comes up while working with the Spring framework.
 
 ---
 

@@ -57,7 +57,7 @@ git push -u origin main                          # Step 4: push the result
 ```
 ---
 
-## The Push Workflow — Always Pull Before You Push
+## The Push Workflow: Always Pull Before You Push
 
 A safe and consistent push habit for every project:
 
@@ -68,13 +68,13 @@ git pull                                         # sync with remote first
 git push                                         # then push
 ```
 
-This avoids rejected pushes when someone else — or your own CI/CD pipeline — has committed to the remote while you were working locally.
+This avoids rejected pushes when someone else or your own CI/CD pipeline has committed to the remote while you were working locally.
 
 !!! tip "Make pull always rebase"
 ```bash
     git config --global pull.rebase true
 ```
-    This keeps your history linear — no merge commits from pulls, just a clean straight line of work. Good habit for all projects.
+    This keeps your history linear, no merge commits from pulls, just a clean straight line of work. Good habit for all projects.
 
 !!! note
     The only time you can skip the pull is when you're 100% certain you're the only one touching that branch and no automation commits back. Even then, pulling costs nothing.
@@ -85,7 +85,7 @@ Pull one specific file from another branch without merging everything:
 
 ```bash
 git checkout upstream/<branch> -- path/to/file.java   # overwrite local file with branch version
-git checkout HEAD -- path/to/file.java                # undo — restore from current branch
+git checkout HEAD -- path/to/file.java                # undo restore from current branch
 ```
 
 The file is overwritten locally and staged automatically.
@@ -122,7 +122,7 @@ git update-index --no-skip-worktree path/to/application.properties
 ```
 
 !!! warning
-    `skip-worktree` breaks during merges — if the incoming merge touches that file, Git blocks. Workaround:
+    `skip-worktree` breaks during merges if the incoming merge touches that file, Git blocks. Workaround:
 
     ```bash
     cp application.properties application.properties.local.bak   # backup local values
@@ -209,7 +209,7 @@ git rebase upstream/master                       # rebase your fork on upstream
 
 Problem: work PC with work credentials, wanting personal project commits attributed to a personal identity.
 
-Solution: Git's `[includeIf]` with `hasconfig:remote.*.url` — switches credentials automatically based on the repo's remote URL, no folder structure required.
+Solution: Git's `[includeIf]` with `hasconfig:remote.*.url` switches credentials automatically based on the repo's remote URL, no folder structure required.
 
 **`~/.gitconfig`**
 
@@ -241,7 +241,7 @@ git config --list --show-origin                  # inspect the full config chain
 ```
 
 !!! warning
-    The `[includeIf]` block must go in `~/.gitconfig`, NOT in `~/.ssh/config`. SSH config only understands Host blocks — mixing them breaks git clone.
+    The `[includeIf]` block must go in `~/.gitconfig`, NOT in `~/.ssh/config`. SSH config only understands Host blocks; mixing them breaks git clone.
 
 ---
 
@@ -284,7 +284,7 @@ git add .gitattributes                           # always track .gitattributes
 git lfs migrate import --include="*.ipynb"       # convert pre-existing files to LFS
 ```
 
-Then commit and push as normal — LFS handles the rest.
+Then commit and push as normal, LFS handles the rest.
 
 Download LFS: [git-lfs releases](https://github.com/git-lfs/git-lfs/releases)
 
@@ -292,10 +292,10 @@ Download LFS: [git-lfs releases](https://github.com/git-lfs/git-lfs/releases)
 
 ## Revert a Commit Pushed Remotely
 
-Reverting creates a new commit that undoes the bad one — the original commit stays in history but no longer affects the current state.
+Reverting creates a new commit that undoes the bad one. The original commit stays in history but no longer affects the current state.
 
 ```bash
-git revert <commit-id>                           # safe revert — creates a new commit
+git revert <commit-id>                           # safe revert, creates a new commit
 ```
 
 For reverting a range of commits:
@@ -321,7 +321,7 @@ git push --force origin <branch>                 # update your fork to match
 ```
 
 !!! warning
-    This is destructive — all local commits and changes are permanently lost. Only use when you're sure you want to throw everything away and start from upstream's state.
+    This is destructive, all local commits and changes are permanently lost. Only use when you're sure you want to throw everything away and start from upstream's state.
 
 !!! tip "Save your work first"
     If you want to keep your changes but still reset:
@@ -342,7 +342,7 @@ git push --force origin <branch>                 # update your fork to match
 
 ### Change the base branch on GitHub (easiest)
 
-If you just need to retarget an existing PR to merge into a different branch — no git commands needed:
+If you just need to retarget an existing PR to merge into a different branch, no git commands needed:
 
 Go to your PR on GitHub → **Edit** (pencil icon next to title) → change the **base branch** → confirm.
 
@@ -381,7 +381,7 @@ Git sometimes runs automatic cleanup (`auto packing`) in the background to optim
 Unlink of file '.git/objects/pack/pack-xxx.pack' failed. Should I try again? (y/n)
 ```
 
-Press **`n`** — this is just a file lock issue on Windows, not an error. Your actual git operation (fetch, push, etc.) completed successfully. Run manual cleanup later if needed:
+Press **`n`**: this is just a file lock issue on Windows, not an error. Your actual git operation (fetch, push, etc.) completed successfully. Run manual cleanup later if needed:
 
 ```bash
 git gc                                           # manual garbage collection

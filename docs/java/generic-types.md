@@ -36,7 +36,7 @@ summary: |
 In short, *Generic Types* allow you to define interfaces, classes, or methods using a placeholder type that is specified later when the class or method is instantiated. This is common in Java Collections, like `List<String>`, `ArrayList<Integer>`, or `Map<Long, String>`.
 
 ??? note "Loosely Speaking"
-    When using a single letter (e.g., `<T>`, `<E>`, or `<K, V>`) in `public interface <T> GenericInterface {}`, `public class GenericClass<T> {}`, or `public <T> genericMethod() {}`, you're essentially telling the user of your generic interface, class, or method that they can use any type they wish when instantiating it — even custom types.
+    When using a single letter (e.g., `<T>`, `<E>`, or `<K, V>`) in `public interface <T> GenericInterface {}`, `public class GenericClass<T> {}`, or `public <T> genericMethod() {}`, you're essentially telling the user of your generic interface, class, or method that they can use any type they wish when instantiating it, even custom types.
     
 One of the tricky parts of generics is seeing `<T>` sitting next to `void` or any other return type. At first, it feels like `<T>` is another return type, but it’s not. Instead, it’s just a signal to the compiler that `T` is a placeholder. Whenever you use the method, the compiler will replace `T` with the actual type you provide.
 Generics allow you to write a class or method that operates on objects of various types: such as `Integer`, `String`, or custom classes without rewriting the code for each type.
@@ -47,7 +47,7 @@ According to the [official Java documentation](http://docs.oracle.com/javase/tut
 
 <blockquote><p>A generic type is a generic class or interface that is parameterized over types.</p></blockquote>
 
-You typically use a generic class when all its behavior (like its methods) should apply consistently to a single data type. A great example is the **Java Collections Framework** — such as `ArrayList<T>` and `HashMap<K, V>`.
+You typically use a generic class when all its behavior (like its methods) should apply consistently to a single data type. A great example is the **Java Collections Framework**, such as `ArrayList<T>` and `HashMap<K, V>`.
 
 In a generic class, you use a type parameter (e.g., `T`) to represent the data type. This allows you to write flexible and reusable code that can work with any type: `Integer`, `String`, `Double`, `Character`, or even user-defined types.
 

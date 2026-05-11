@@ -26,4 +26,4 @@ Dive in, and start building!
 - [Git](git/index.md)  
   _Commands, workflows, and solutions from real experience._
 
-*(More tools coming soon — Docker, CI/CD, Linux...)*
+*(More tools coming soon, Docker, CI/CD, Linux...)*

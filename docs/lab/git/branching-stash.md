@@ -60,12 +60,12 @@ git merge <branch> # Merge branch into current (be on target branch)
 
 ---
 
-## Branch Naming — Sub-branches Don't Exist in Git
+## Branch Naming: sub-branches don't exist in Git
 Git has no concept of sub-branches. The `/` in a branch name is just a string character, purely a human convention for visual grouping.
 
 ```bash
 feat/FeatureName
-test/feat/FeatureName     # only "related" by name — Git has no idea
+test/feat/FeatureName     # only "related" by name. Git has no idea
 ```
 
 Git sees both as equal, independent branches. The naming is for **you**, not for Git.
@@ -141,7 +141,7 @@ git stash push -m "drop/whatever"               # marked for deletion
 
 ### Renaming a Stash
 
-Git has no native rename command — pop and re-stash:
+Git has no native rename command, pop and re-stash:
 
 ```bash
 git stash pop stash@{N}                          # pop the one to rename
@@ -166,7 +166,7 @@ git checkout stash@{0} -- path/to/file.java      # cherry-pick one file from a s
 
 ## Undoing & Reverting
 
-### Revert a Commit (Safe — Creates a New Commit)
+### Revert a Commit (Safe, Creates a New Commit)
 
 Reverting creates a new commit that undoes the changes of a previous one. The original commit stays in history.
 

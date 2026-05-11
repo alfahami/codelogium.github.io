@@ -21,7 +21,7 @@ hide:
 
 ## Project Overview
 
-This space is my digital notepad, my logium, my messy mind organized — or at least *trying to be*.
+This space is my digital notepad, my logium, my messy mind organized or at least *trying to be*.
 
 I often dive deep into tech topics, sometimes bounce around, discovering new passions or revisiting old ones. Despite all the tools out there, I still love good old paper, notebooks, pens, and pencils.
 
@@ -52,7 +52,7 @@ And maybe more... or less. Depends on the day 😄
 ## Just One Promise
 
 No boring stuff (hopefully).  
-This is more of a log than a guide — raw, honest, sometimes chaotic.
+This is more of a log than a guide: raw, honest, sometimes chaotic.
 
 ---
 
@@ -70,5 +70,5 @@ This is more of a log than a guide — raw, honest, sometimes chaotic.
 
 ---
 
-_Codelogium is my digital workshop — where I log, learn, and sometimes rant about dev life._
+_Codelogium is my digital workshop: where I log, learn, and sometimes rant about dev life._
 
