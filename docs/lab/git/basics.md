@@ -123,7 +123,7 @@ target/
 
 ??? tip "Other ways to ignore files"
 
-    - Add entries to `.git/info/exclude` — works like `.gitignore` but stays local and never shows in `git status`
+    - Add entries to `.git/info/exclude`: works like `.gitignore` but stays local and never shows in `git status`
     - `.gitignore` can ignore itself, but adding it to `.git/info/exclude` is cleaner
 
 See the [official gitignore documentation](https://git-scm.com/docs/gitignore) and [GitHub's guide on ignoring files](https://help.github.com/en/github/using-git/ignoring-files) for pattern syntax.
@@ -234,3 +234,31 @@ git blame -L 100,120 <file>                      # blame a range of lines
     git show fab986cd                            # see the full diff of that commit
     git show fab986cd --stat                     # just the files changed
 ```
+---
+
+## Fix Line Endings (Windows CRLF Issue)
+
+When working on Windows, files often get CRLF line endings that show up as `^M` characters in diffs and break Unix-based CI/CD pipelines. Fix before committing:
+
+```bash
+git ls-files --eol                               # check current line endings in tracked files
+dos2unix path/to/file                            # convert one file from CRLF to LF
+find . -name "*.java" -exec dos2unix {} \;       # convert all java files recursively
+```
+
+After converting:
+
+```bash
+git add .
+git commit -m "fix: normalize line endings to LF"
+```
+
+!!! tip "Prevent it permanently"
+    Add a `.gitattributes` file at the root of your repo:
+    ```
+    * text=auto eol=lf
+    ```
+    This forces LF line endings for all text files regardless of the OS.
+
+!!! note
+    In your IDE: VSCode → bottom right corner → click `CRLF` → select `LF`. IntelliJ → File → Line Separators → LF.

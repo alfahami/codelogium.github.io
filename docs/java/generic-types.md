@@ -31,7 +31,7 @@ summary: |
   </div>
 </div>
 
-> “Write once, use many” — Generics let you write flexible and reusable code.
+> “Write once, use many”: Generics let you write flexible and reusable code.
 
 In short, *Generic Types* allow you to define interfaces, classes, or methods using a placeholder type that is specified later when the class or method is instantiated. This is common in Java Collections, like `List<String>`, `ArrayList<Integer>`, or `Map<Long, String>`.
 
@@ -39,7 +39,7 @@ In short, *Generic Types* allow you to define interfaces, classes, or methods us
     When using a single letter (e.g., `<T>`, `<E>`, or `<K, V>`) in `public interface <T> GenericInterface {}`, `public class GenericClass<T> {}`, or `public <T> genericMethod() {}`, you're essentially telling the user of your generic interface, class, or method that they can use any type they wish when instantiating it — even custom types.
     
 One of the tricky parts of generics is seeing `<T>` sitting next to `void` or any other return type. At first, it feels like `<T>` is another return type, but it’s not. Instead, it’s just a signal to the compiler that `T` is a placeholder. Whenever you use the method, the compiler will replace `T` with the actual type you provide.
-Generics allow you to write a class or method that operates on objects of various types — such as `Integer`, `String`, or custom classes — without rewriting the code for each type.
+Generics allow you to write a class or method that operates on objects of various types: such as `Integer`, `String`, or custom classes without rewriting the code for each type.
 
 Generics in Java ensure type safety, reduce boilerplate, prevent runtime errors (like `ClassCastException`), and make the code easier to read and maintain.
 
@@ -87,14 +87,14 @@ intBox.set(123);
 ```
 
 ??? tip "Quite a Stretch"
-    Imagine a strong iron box that can hold *any* kind of item — even ones crafted by the user themselves.<br>
+    Imagine a strong iron box that can hold *any* kind of item, even ones crafted by the user themselves.<br>
     Now, let’s stretch that idea a bit further...
 
     What if this box could hold another box just like it? Could it nest within itself, over and over?
 
     The answer is: **yes**! <br> 
-    That’s the idea behind recursive generics — a container that can hold its own kind.<br>  
-    (But don’t worry — we won’t dive into that here.)
+    That’s the idea behind recursive generics, a container that can hold its own kind.<br>  
+    (But don’t worry, we won’t dive into that here.)
 ---
 
 ## Generic Methods
@@ -302,12 +302,12 @@ The full Java file for this learning can be found here: [GenericType.java](https
     Along the way, we also discovered two interesting aspects of OOP:
 
     1. **Interfaces inside classes are implicitly static.**<br> 
-    If you're declaring an interface inside a class, **you can** make it `static` — and **you usually should**, to avoid holding an implicit reference to the outer class.
+    If you're declaring an interface inside a class, **you can** make it `static` and **you usually should**, to avoid holding an implicit reference to the outer class.
     Interfaces declared inside a class are **implicitly static**, meaning they can be used without creating an instance of the outer class. And that's an interesting and sometimes subtle aspect of Java! <br>
     Even if you don’t explicitly use the static keyword, any interface declared inside a class is implicitly static by definition. This means you can reference it without creating an instance of the enclosing class, and it behaves independently of any specific instance of the outer class. An interface is implicitly `static` when declared inside a class. You don't need an instance of the outer class to use it.
 
     2. **Classes can instantiate themselves (and it’s totally valid)**<br>
-    It's possible to instantiate a class from within itself in the `main` method (!like I'm creating this class, but I'm also instantiating this class in this class ... cool tho!) — something not usually needed but helpful when everything is enclosed in one file.
+    It's possible to instantiate a class from within itself in the `main` method (!like I'm creating this class, but I'm also instantiating this class in this class ... cool tho!), something not usually needed but helpful when everything is enclosed in one file.
     Because we used a single Java class to contain all the examples, we had to reference generic classes and interfaces from within the same outer class. That’s where we learned this pattern:
 
         ```java

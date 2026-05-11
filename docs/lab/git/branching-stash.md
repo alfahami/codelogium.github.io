@@ -61,7 +61,7 @@ git merge <branch> # Merge branch into current (be on target branch)
 ---
 
 ## Branch Naming — Sub-branches Don't Exist in Git
-Git has no concept of sub-branches. The `/` in a branch name is just a string character — purely a human convention for visual grouping.
+Git has no concept of sub-branches. The `/` in a branch name is just a string character, purely a human convention for visual grouping.
 
 ```bash
 feat/FeatureName
@@ -134,9 +134,9 @@ git stash push -m "drop/whatever"               # marked for deletion
 
 **Golden rules:**
 
-- Keep **one** `local/` config stash total — pop it, use it, re-stash it. Never duplicate
-- Never commit with local config applied — re-stash before `git push`
-- Never mix `wip/` and `local/` in the same stash — stash them separately
+- Keep **one** `local/` config stash total, pop it, use it, re-stash it. Never duplicate
+- Never commit with local config applied, re-stash before `git push`
+- Never mix `wip/` and `local/` in the same stash; stash them separately
 - Drop a `wip/` stash as soon as its branch is merged
 
 ### Renaming a Stash
@@ -230,6 +230,68 @@ git pull --rebase origin <branch-name>
 ```
 
 ---
+
+---
+
+## Cherry-pick
+
+Apply a specific commit from any branch to your current branch without merging everything:
+
+```bash
+git cherry-pick <commit-hash>                    # apply one specific commit
+git cherry-pick <hash1> <hash2> <hash3>          # apply multiple commits in order
+git cherry-pick <hash1>..<hash2>                 # apply a range of commits
+```
+
+!!! tip "Real use case"
+    Your branch picked up commits you didn't make (contaminated branch). Start fresh and bring only your work:
+    ```bash
+    git checkout <base-branch>
+    git checkout -b feat/clean-branch            # fresh branch from base
+    git cherry-pick <your-commit-hash>           # bring only your commit(s)
+    git push origin feat/clean-branch
+    ```
+    This is cleaner than trying to untangle a messy branch history.
+
+!!! warning
+    Cherry-pick replays commits; if the commit touches files that have changed since, you may get conflicts to resolve manually.
+
+---
+
+## Abort a Merge or Rebase in Progress
+
+If a merge or rebase goes wrong and you want to get back to a clean state:
+
+```bash
+git merge --abort                                # abort an in-progress merge
+git rebase --abort                               # abort an in-progress rebase
+```
+
+Both commands restore your branch to the state it was in before you started. Safe to run at any point during a conflict resolution.
+
+!!! note
+    If you accidentally closed your terminal mid-rebase and git is still in rebase state, check with `git status`: it will tell you a rebase is in progress. Then run `git rebase --abort` to clean up.
+
+---
+
+## Diagnose a Contaminated Branch
+
+When your branch has commits you didn't make, usually because it was created from an old or wrong base:
+
+```bash
+git log base-branch..your-branch --oneline      # commits in your branch not in base
+git diff base-branch..your-branch --name-only   # files that differ between branches
+```
+
+If you see commits you didn't make, start clean:
+
+```bash
+git checkout <base-branch>
+git checkout -b feat/clean-branch               # fresh branch from correct base
+git checkout feat/OldBranch -- path/to/your/file.java  # bring only your files
+git commit -m "feat: port changes to clean branch"
+git push origin feat/clean-branch
+```
 
 ## Ways of Resolving `git push rejected non-fast-forward`
 

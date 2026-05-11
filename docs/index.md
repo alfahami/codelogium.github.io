@@ -23,7 +23,7 @@ hide:
 
 This space is my digital notepad, my logium, my messy mind organized — or at least *trying to be*.
 
-I often dive deep into tech topics, sometimes bounce around — discovering new passions or revisiting old ones. Despite all the tools out there, I still love good old paper, notebooks, pens, and pencils.
+I often dive deep into tech topics, sometimes bounce around, discovering new passions or revisiting old ones. Despite all the tools out there, I still love good old paper, notebooks, pens, and pencils.
 
 But hey, why not digitize it?
 
@@ -65,7 +65,7 @@ This is more of a log than a guide — raw, honest, sometimes chaotic.
 - [🗃️ Databases](databases/index.md)
 - [☕ Java](java/index.md)
 - [🌱 Spring](spring/index.md)
-- - [🧪 Lab](lab/index.md)
+- [🧪 Lab](lab/index.md)
 - [📝 Blog](blog/index.md)
 
 ---
