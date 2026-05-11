@@ -5,21 +5,17 @@ categories:
   - Git
   - Workflow
 description: "Branching strategies, stash workflows, reverting commits, resetting history, and inspecting specific commits."
-tags:
-  - Git
-  - Branches
-  - Stash
-  - Revert
 reading_time: 6
 ---
+
 # Branches, Stash & Undoing
 
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
-      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>Git</em></a>&nbsp;•&nbsp;
-               <a href="/categories/workflow/"><em>Workflow</em></a>&nbsp;•&nbsp;
+      By <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
+               <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~6 min read</span>
     </span>
   </div>
@@ -55,13 +51,14 @@ git push --set-upstream origin <name>            # Push and set upstream in one 
 ### Merging
 
 ```bash
-git merge <branch> # Merge branch into current (be on target branch)
+git merge <branch>                               # Merge branch into current (be on target branch)
 ```
 
 ---
 
-## Branch Naming: sub-branches don't exist in Git
-Git has no concept of sub-branches. The `/` in a branch name is just a string character, purely a human convention for visual grouping.
+## Branch Naming: Sub-branches Don't Exist in Git
+
+Git has no concept of sub-branches. The `/` in a branch name is just a string character; purely a human convention for visual grouping.
 
 ```bash
 feat/FeatureName
@@ -134,14 +131,14 @@ git stash push -m "drop/whatever"               # marked for deletion
 
 **Golden rules:**
 
-- Keep **one** `local/` config stash total, pop it, use it, re-stash it. Never duplicate
-- Never commit with local config applied, re-stash before `git push`
+- Keep **one** `local/` config stash total; pop it, use it, re-stash it. Never duplicate
+- Never commit with local config applied; re-stash before `git push`
 - Never mix `wip/` and `local/` in the same stash; stash them separately
 - Drop a `wip/` stash as soon as its branch is merged
 
 ### Renaming a Stash
 
-Git has no native rename command, pop and re-stash:
+Git has no native rename command; pop and re-stash:
 
 ```bash
 git stash pop stash@{N}                          # pop the one to rename
@@ -166,7 +163,7 @@ git checkout stash@{0} -- path/to/file.java      # cherry-pick one file from a s
 
 ## Undoing & Reverting
 
-### Revert a Commit (Safe, Creates a New Commit)
+### Revert a Commit (Safe; Creates a New Commit)
 
 Reverting creates a new commit that undoes the changes of a previous one. The original commit stays in history.
 
@@ -183,6 +180,7 @@ git push
 ```
 
 ### Delete the Last Commit Locally and Remotely
+
 ```bash
 git reset HEAD^ --hard                           # reset local branch to parent commit
 git push origin -f                               # force push to remote
@@ -203,6 +201,7 @@ git rebase -i HEAD~x                             # x = number of commits back to
 In the editor, change `pick` to `drop` for the commit you want to remove.
 
 ---
+
 ## Git Prune
 
 Cleans up unreachable or orphaned git objects and outdated remote branch references:
@@ -213,6 +212,7 @@ git fetch --all --prune                          # fetch and clean outdated remo
 ```
 
 ---
+
 ## Divergent Branches on Pull
 
 Happens when two sources commit to the same branch (e.g. you locally + GitHub Actions). Git refuses to pull without knowing how to reconcile.
@@ -228,8 +228,6 @@ For a one-time fix:
 ```bash
 git pull --rebase origin <branch-name>
 ```
-
----
 
 ---
 
@@ -270,13 +268,13 @@ git rebase --abort                               # abort an in-progress rebase
 Both commands restore your branch to the state it was in before you started. Safe to run at any point during a conflict resolution.
 
 !!! note
-    If you accidentally closed your terminal mid-rebase and git is still in rebase state, check with `git status`: it will tell you a rebase is in progress. Then run `git rebase --abort` to clean up.
+    If you accidentally closed your terminal mid-rebase and git is still in rebase state, check with `git status`; it will tell you a rebase is in progress. Then run `git rebase --abort` to clean up.
 
 ---
 
 ## Diagnose a Contaminated Branch
 
-When your branch has commits you didn't make, usually because it was created from an old or wrong base:
+When your branch has commits you didn't make; usually because it was created from an old or wrong base:
 
 ```bash
 git log base-branch..your-branch --oneline      # commits in your branch not in base
@@ -292,6 +290,8 @@ git checkout feat/OldBranch -- path/to/your/file.java  # bring only your files
 git commit -m "feat: port changes to clean branch"
 git push origin feat/clean-branch
 ```
+
+---
 
 ## Ways of Resolving `git push rejected non-fast-forward`
 

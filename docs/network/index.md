@@ -1,6 +1,6 @@
 ---
 title: Network
-description: "The Lab: practical references, cheatsheets, and guides for tools like Git, Docker, and CI/CD workflows."
+description: "Basic network concepts that backend and frontend developers need to understand: OSI model, TCP/IP, DNS, and how apps communicate."
 hide:
   - toc
   - navigation
@@ -9,16 +9,15 @@ hide:
   - footer
 ---
 
-# 🌱 Network
+# 🌐 Network
 
-Basic Network Concepts that backend and frontend devs need to understand.
-Things that once you know, you work and move different in your career, field, etc
+Basic network concepts that backend and frontend developers need to understand. Things that once you know, you work and move differently in your career, field, and day-to-day problem solving.
 
 ---
 
 ## Posts
 
 - [Basic Network Concepts (Part I)](basic-network1.md)  
-  _How does these app communicates, what's the role of network in wht we build_
+  _How apps communicate and what role the network plays in what we build._
 
-*(More Network knowledge on the way...)*
+*(More network knowledge on the way...)*

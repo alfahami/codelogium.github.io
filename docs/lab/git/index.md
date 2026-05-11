@@ -5,10 +5,6 @@ categories:
   - Git
   - Workflow
 description: "A practical reference built from real experience; commands, workflows, and solutions that actually came up."
-tags:
-  - Git
-  - VCS (Version Control System)
-  - Workflow
 reading_time: 3
 ---
 
@@ -17,7 +13,7 @@ reading_time: 3
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      By <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
          <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
       ⏱️ ~3 min read</span>
@@ -25,9 +21,9 @@ reading_time: 3
   </div>
 </div>
 
-> "Version control is not just a tool, it's a habit."
+> "Version control is not just a tool; it's a habit."
 
-Git is a **distributed version control system** for tracking changes in files, coordinating work across multiple developers, and reverting to any point in history. GitHub extends that with remote hosting, collaboration, and workflow automation.
+Git is a **distributed version control system** for tracking changes in files, coordinating work across multiple developers, and reverting to any point in history. Remote platforms like GitHub, GitLab, or Gitea extend that with hosting, collaboration, and workflow automation.
 
 This section is a **living reference**, not a tutorial. Every entry here came from a real situation: a merge gone wrong, a stale creation date, a pushed commit that shouldn't have been, a branch tracking the wrong remote. If it happened, it's here.
 
@@ -47,7 +43,7 @@ Branching strategies, stash workflows, reverting commits, resetting history, and
 
 ---
 
-**[Remotes, GitHub & Workflows](remotes-workflows.md)**
+**[Remotes & Workflows](remotes-workflows.md)**
 
 Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branches, and Git LFS.
 
@@ -55,7 +51,7 @@ Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branch
 
 ## Quick Reference
 
-The commands you reach for daily, no need to open a full article:
+The commands you reach for daily; no need to open a full article:
 
 ```bash
 git status                        # what's going on
@@ -84,7 +80,7 @@ git branch -D <branch>            # delete local branch
 - [Official Git Documentation](https://git-scm.com/doc)
 - [Conventional Commits Spec](https://www.conventionalcommits.org/)
 - [gitignore patterns](https://git-scm.com/docs/gitignore)
-- [Ignoring files GitHub Docs](https://help.github.com/en/github/using-git/ignoring-files)
+- [Ignoring files - GitHub Docs](https://help.github.com/en/github/using-git/ignoring-files)
 - [Git LFS](https://git-lfs.com/)
 - [Revert a pushed commit](https://christoph.ruegg.name/blog/git-howto-revert-a-commit-already-pushed-to-a-remote-reposit.html)
 - [Fix non-fast-forward push errors](https://stackoverflow.com/questions/20467179/git-push-rejected-non-fast-forward)

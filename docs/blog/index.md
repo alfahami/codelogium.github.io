@@ -9,10 +9,9 @@ hide:
 
 # 📝 Blog
 
-Welcome to the **Blog**, the free zone.  
-Here, you’ll find posts that don’t quite fit under a specific tech category. It could be ideas, books, tools, random findings, or digital brain dumps.
+Welcome to the **Blog**: the free zone. Here, you'll find posts that don't quite fit under a specific tech category. It could be ideas, books, tools, random findings, or digital brain dumps.
 
 ---
 
 ## Posts
-
+> _Not all who wander are lost; some are just debugging._

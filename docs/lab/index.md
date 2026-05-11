@@ -11,13 +11,11 @@ hide:
 
 Welcome to the **Lab**: the playground of Codelogium.
 
-This is the space where theory meets practice.<br> 
-Here, you’ll find quick guides, cheatsheets, and hands-on examples designed to help you tackle real-world challenges. 
+This is the space where theory meets practice. Here, you'll find quick guides, cheatsheets, and hands-on examples designed to help you tackle real-world challenges.
 
 This is where I test, break, and rebuild. Expect practical deep dives, hands-on experiments, side projects, and explorations of tools like Git, Docker, CI/CD, and more.
 
-Whether you're looking for a fast reference or experimenting with new tools, the Lab is your go-to spot for practical knowledge. <br> 
-Dive in, and start building!
+Whether you're looking for a fast reference or experimenting with new tools, the Lab is your go-to spot for practical knowledge. Dive in and start building!
 
 ---
 
@@ -26,4 +24,4 @@ Dive in, and start building!
 - [Git](git/index.md)  
   _Commands, workflows, and solutions from real experience._
 
-*(More tools coming soon, Docker, CI/CD, Linux...)*
+*(More tools coming soon: Docker, CI/CD, Linux...)*

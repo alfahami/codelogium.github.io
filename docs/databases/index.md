@@ -1,5 +1,6 @@
 ---
 title: Databases
+description: "Database notes and comparisons: Postgres, H2, Hibernate tips, and real-world usage patterns."
 hide:
   - toc
   - navigation
@@ -11,7 +12,7 @@ hide:
 
 Welcome to the **Databases** section of Codelogium.
 
-Here you’ll find posts about SQL, ORMs, in-memory databases, performance tips, and more. Basically, everything I’ve touched or struggled with on the data side.
+Here you'll find posts about SQL, ORMs, in-memory databases, performance tips, and more. Basically, everything I've touched or struggled with on the data side.
 
 ---
 
