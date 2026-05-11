@@ -4,7 +4,7 @@ date: 2026-05-09
 categories:
   - Git
   - Workflow
-description: "A practical reference built from real experience — commands, workflows, and solutions that actually came up."
+description: "A practical reference built from real experience; commands, workflows, and solutions that actually came up."
 tags:
   - Git
   - VCS (Version Control System)
@@ -84,7 +84,7 @@ git branch -D <branch>            # delete local branch
 - [Official Git Documentation](https://git-scm.com/doc)
 - [Conventional Commits Spec](https://www.conventionalcommits.org/)
 - [gitignore patterns](https://git-scm.com/docs/gitignore)
-- [Ignoring files — GitHub Docs](https://help.github.com/en/github/using-git/ignoring-files)
+- [Ignoring files GitHub Docs](https://help.github.com/en/github/using-git/ignoring-files)
 - [Git LFS](https://git-lfs.com/)
 - [Revert a pushed commit](https://christoph.ruegg.name/blog/git-howto-revert-a-commit-already-pushed-to-a-remote-reposit.html)
 - [Fix non-fast-forward push errors](https://stackoverflow.com/questions/20467179/git-push-rejected-non-fast-forward)

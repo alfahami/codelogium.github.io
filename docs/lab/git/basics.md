@@ -4,7 +4,7 @@ date: 2026-05-09
 categories:
   - Git
   - Workflow
-description: "The git commands you use every day — init, add, commit, status, .gitignore, aliases, and commit message conventions."
+description: "The git commands you use every day: init, add, commit, status, .gitignore, aliases, and commit message conventions."
 tags:
   - Git
   - Basics
@@ -175,7 +175,7 @@ Using a consistent commit message format keeps your git history clean and readab
 | `chore` | Maintenance tasks (e.g., updating dependencies) |
 | `docs` | Documentation updates |
 | `test` | Adds or updates tests |
-| `style` | Formatting (spaces, indentation — no code changes) |
+| `style` | Formatting (spaces, indentation, no code changes) |
 | `perf` | Performance improvements |
 | `ci` | Changes to CI/CD pipeline |
 | `build` | Changes affecting the build system or dependencies |
@@ -192,7 +192,7 @@ chore: bump spring-boot to 3.2.1
 
 ### Best Practices
 
-- Use **imperative mood** — "Add method" not "Added method"
+- Use **imperative mood**: "Add method" not "Added method"
 - Keep the title **under 50 characters**
 - Add context in the body when necessary
 
@@ -228,7 +228,7 @@ git blame -L 100,120 <file>                      # blame a range of lines
     git blame -L 381,381 src/main/java/com/example/MyService.java
     # fab986cd (Nitika Doe 2026-04-27 13:42:47 +0530 381) problematic code here
 ```
-    You get the commit hash, author name, timestamp, and the exact line —
+    You get the commit hash, author name, timestamp, and the exact line,
     enough to track down who made the change and when, then cross-reference with `git show`:
 ```bash
     git show fab986cd                            # see the full diff of that commit

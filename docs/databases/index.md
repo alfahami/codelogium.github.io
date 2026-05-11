@@ -11,7 +11,7 @@ hide:
 
 Welcome to the **Databases** section of Codelogium.
 
-Here you’ll find posts about SQL, ORMs, in-memory databases, performance tips, and more — basically, everything I’ve touched or struggled with on the data side.
+Here you’ll find posts about SQL, ORMs, in-memory databases, performance tips, and more. Basically, everything I’ve touched or struggled with on the data side.
 
 ---
 
