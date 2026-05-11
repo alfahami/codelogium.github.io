@@ -70,6 +70,8 @@ nav:
           - Basics & Daily Commands: lab/git/basics.md
           - Branches, Stash & Undoing: lab/git/branching-stash.md
           - Remotes & Workflows: lab/git/remotes-workflows.md
+          - Issues & Troubleshooting: lab/git/issues.md
+
   - Blog:
       - Overview: blog/index.md
       - MkDocs Creation Date Bug: blog/posts/mkdocs-creation-date-debug.md
