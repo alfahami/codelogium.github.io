@@ -5,12 +5,7 @@ categories:
   - Git
   - Workflow
 description: "The git commands you use every day: init, add, commit, status, .gitignore, aliases, and commit message conventions."
-tags:
-  - Git
-  - Basics
-  - Commands
-  - Commit
-reading_time: 5
+reading_time: 7
 ---
 
 # Basics & Daily Commands
@@ -18,11 +13,10 @@ reading_time: 5
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By —<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      By <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/git/"><em>git</em></a>&nbsp;•&nbsp;
                <a href="/categories/workflow/"><em>workflow</em></a>&nbsp;•&nbsp;
-
-      ⏱️ ~5 min read</span>
+      ⏱️ ~7 min read</span>
     </span>
   </div>
 </div>
@@ -122,7 +116,6 @@ target/
 ```
 
 ??? tip "Other ways to ignore files"
-
     - Add entries to `.git/info/exclude`: works like `.gitignore` but stays local and never shows in `git status`
     - `.gitignore` can ignore itself, but adding it to `.git/info/exclude` is cleaner
 
@@ -224,16 +217,55 @@ git blame -L 100,120 <file>                      # blame a range of lines
 
 ??? tip "Real Use Case"
     When a build breaks and you need to find who introduced the change:
-```bash
+    ```bash
     git blame -L 381,381 src/main/java/com/example/MyService.java
     # fab986cd (Nitika Doe 2026-04-27 13:42:47 +0530 381) problematic code here
-```
-    You get the commit hash, author name, timestamp, and the exact line,
-    enough to track down who made the change and when, then cross-reference with `git show`:
-```bash
+    ```
+    You get the commit hash, author name, timestamp, and the exact line; enough to track down who made the change and when. Then cross-reference with `git show`:
+    ```bash
     git show fab986cd                            # see the full diff of that commit
     git show fab986cd --stat                     # just the files changed
+    ```
+
+---
+
+## Git Bisect: Find the Commit That Introduced a Bug
+
+`git bisect` uses binary search to find exactly which commit broke something. Instead of checking 50 commits manually, it finds the culprit in about 6 steps.
+
+```bash
+git bisect start                                 # start the bisect session
+git bisect bad                                   # mark current commit as broken
+git bisect good <commit-hash>                    # mark a known working commit
 ```
+
+Git checks out a commit halfway between good and bad. Test your app, then tell git the result:
+
+```bash
+git bisect good                                  # this commit works fine
+git bisect bad                                   # bug exists in this commit
+```
+
+Keep repeating until git prints:
+
+```
+abc1234 is the first bad commit
+```
+
+Then reset back to your original branch:
+
+```bash
+git bisect reset                                 # end session, return to original branch
+```
+
+??? tip "Real Use Case"
+    Your app worked last month, it's broken today, and there are 50 commits in between. Instead of checking all 50, bisect finds the culprit in ~6 steps. Once found:
+    ```bash
+    git show abc1234                             # see exactly what changed
+    git show abc1234 --stat                      # just the files that changed
+    ```
+    Combine with `git blame` to get the full picture; who wrote it, when, and what broke.
+
 ---
 
 ## Fix Line Endings (Windows CRLF Issue)
@@ -261,4 +293,4 @@ git commit -m "fix: normalize line endings to LF"
     This forces LF line endings for all text files regardless of the OS.
 
 !!! note
-    In your IDE: VSCode → bottom right corner → click `CRLF` → select `LF`. IntelliJ → File → Line Separators → LF.
+    In your IDE: VSCode, bottom right corner, click `CRLF` and select `LF`. IntelliJ: File > Line Separators > LF.
