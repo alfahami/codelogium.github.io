@@ -47,6 +47,10 @@ Branching strategies, stash workflows, reverting commits, resetting history, and
 
 Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branches, and Git LFS.
 
+**[Issues & Troubleshooting](issues.md)**
+
+Real git issues encountered during development: root causes, investigation steps, and fixes.
+
 ---
 
 ## Quick Reference
