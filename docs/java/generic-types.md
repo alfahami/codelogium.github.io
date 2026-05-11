@@ -17,7 +17,7 @@ summary: |
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      By: &nbsp;<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/java/"><em>java</em></a>&nbsp;•&nbsp;  
          <a href="/categories/programming/"><em>programming</em></a>&nbsp;•&nbsp; 
          <a href="/categories/oop/"><em>oop</em></a>&nbsp;•&nbsp;  
