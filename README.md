@@ -1,6 +1,6 @@
 # Codelogium
 
-> Developer logs, notes, and learning paths — built with MkDocs Material.
+> Developer logs, notes, and learning paths; built with MkDocs Material.
 
 Live site: [codelogium.github.io](https://codelogium.github.io)
 
@@ -8,7 +8,7 @@ Live site: [codelogium.github.io](https://codelogium.github.io)
 
 ## What Is This
 
-A personal documentation site covering things I learn, debug, and build as a developer. Not a tutorial site — more of a second brain that happens to be public.
+A personal documentation site covering things I learn, debug, and build as a developer. Not a tutorial site; more of a second brain that happens to be public.
 
 Sections include Java, Spring, Databases, Network, Lab (Git, Docker, CI/CD), and a Blog for stories and reflections.
 
@@ -119,7 +119,7 @@ For the live deployment, this is set as a repository secret in GitHub Actions.
 
 Deployment is fully automated via GitHub Actions. Every push to `main` triggers a build and deploy to GitHub Pages.
 
-The workflow file is at `.github/workflows/`. No manual deployment needed — just push and the site updates automatically.
+The workflow file is at `.github/workflows/`. No manual deployment needed; just push and the site updates automatically.
 
 ---
 
@@ -165,6 +165,239 @@ description: "SEO description"    # Used for meta description tag
 reading_time: 5                   # Shown in blog-meta div (minutes)
 ---
 ```
+
+---
+
+## Page Boilerplates
+
+Ready-to-use starter templates for every page type. Click to expand and copy.
+
+<details>
+<summary>📄 Section Index</summary>
+
+For overview pages like `java/index.md`, `network/index.md`, etc.
+
+```markdown
+---
+title: <Section Name>
+description: "<Short description of what this section covers.>"
+hide:
+  - toc
+  - navigation
+  - feedback
+  - metadata
+  - footer
+---
+
+# <Emoji> <Section Name>
+
+<One or two sentences describing what this section is about and who it's for.>
+
+---
+
+## Posts
+
+- [Article Title](article-slug.md)  
+  _Short one-line description of what the article covers._
+
+*(More posts coming soon...)*
+```
+
+</details>
+
+<details>
+<summary>🧪 Lab Section Index</summary>
+
+For tool overview pages like `lab/git/index.md`.
+
+```markdown
+---
+title: "<Tool Name>"
+date: YYYY-MM-DD
+categories:
+  - <Category>
+  - Workflow
+description: "<One sentence describing this tool reference.>"
+reading_time: <N>
+---
+
+# <Tool Name>
+
+<div class="blog-meta">
+  <div class="blog-meta-container">
+    <span class="meta-content">
+      By: <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/<category>/"><em><category></em></a>&nbsp;•&nbsp;
+      ⏱️ ~<N> min read</span>
+    </span>
+  </div>
+</div>
+
+> "<A short quote.>"
+
+<One or two sentences describing what this section covers and why it exists.>
+This section is a **living reference**, not a tutorial. Every entry came from a real situation.
+
+---
+
+## What's Inside
+
+**[<Article 1 Title>](<article-1.md>)**
+
+<Short description.>
+
+---
+
+**[<Article 2 Title>](<article-2.md>)**
+
+<Short description.>
+
+---
+
+## Quick Reference
+
+```bash
+command                                          # description
+```
+
+---
+
+## Resources
+
+- [Resource Name](url)
+```
+
+</details>
+
+<details>
+<summary>📖 Lab Reference Article</summary>
+
+For technical cheatsheet pages like `lab/git/basics.md`.
+
+```markdown
+---
+title: "<Article Title>"
+date: YYYY-MM-DD
+categories:
+  - <Category>
+  - Workflow
+description: "<One sentence describing what this article covers.>"
+reading_time: <N>
+---
+
+# <Article Title>
+
+<div class="blog-meta">
+  <div class="blog-meta-container">
+    <span class="meta-content">
+      By: <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/<category>/"><em><category></em></a>&nbsp;•&nbsp;
+      ⏱️ ~<N> min read</span>
+    </span>
+  </div>
+</div>
+
+> "<A short quote or key idea that sets the tone.>"
+
+---
+
+## <First Section>
+
+<Content here.>
+
+```bash
+command                                          # description
+```
+
+---
+
+## <Second Section>
+
+<Content here.>
+```
+
+</details>
+
+<details>
+<summary>☕ Regular Technical Article</summary>
+
+For articles like `java/generic-types.md` or `network/basic-network1.md`.
+
+```markdown
+---
+title: "<Article Title>"
+date: YYYY-MM-DD
+categories:
+  - <Category>
+description: "<One sentence describing the article for SEO.>"
+reading_time: <N>
+---
+
+# <Article Title>
+
+<div class="blog-meta">
+  <div class="blog-meta-container">
+    <span class="meta-content">
+      By: <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/<category>/"><em><category></em></a>&nbsp;•&nbsp;
+      ⏱️ ~<N> min read</span>
+    </span>
+  </div>
+</div>
+
+> "<A short quote or key idea.>"
+
+<Intro paragraph.>
+
+---
+
+## <First Section>
+
+<Content here.>
+
+---
+
+## What We Learned
+
+<Short summary of key takeaways.>
+```
+
+</details>
+
+<details>
+<summary>📝 Technical Blog Post</summary>
+
+For narrative articles under `blog/posts/`.
+
+```markdown
+---
+authors:
+  - alfahami
+title: "<Article Title>"
+date: YYYY-MM-DD
+categories:
+  - <Category>
+description: "<One sentence describing the article for SEO.>"
+---
+
+# <Article Title>
+
+> "<A short quote that captures the spirit of the article.>"
+
+<One paragraph intro that sets up the problem or story.>
+
+<!-- more -->
+
+<Rest of the article content here.>
+
+---
+
+## <First Section>
+
+<Content here.>
+```
+
+</details>
 
 ---
 
