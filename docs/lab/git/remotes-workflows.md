@@ -55,8 +55,29 @@ git checkout main                                # Step 2: switch to base branch
 git merge <branch-name>                          # Step 3: merge the PR branch
 git push -u origin main                          # Step 4: push the result
 ```
-
 ---
+
+## The Push Workflow — Always Pull Before You Push
+
+A safe and consistent push habit for every project:
+
+```bash
+git add .                                        # stage your changes
+git commit -m "your message"                     # commit
+git pull                                         # sync with remote first
+git push                                         # then push
+```
+
+This avoids rejected pushes when someone else — or your own CI/CD pipeline — has committed to the remote while you were working locally.
+
+!!! tip "Make pull always rebase"
+```bash
+    git config --global pull.rebase true
+```
+    This keeps your history linear — no merge commits from pulls, just a clean straight line of work. Good habit for all projects.
+
+!!! note
+    The only time you can skip the pull is when you're 100% certain you're the only one touching that branch and no automation commits back. Even then, pulling costs nothing.
 
 ## Fetch a Single File from Another Branch
 
