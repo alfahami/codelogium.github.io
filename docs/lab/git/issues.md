@@ -351,4 +351,3 @@ File tracking status prefixes in `git ls-files -v`:
 | Blocks merge if upstream touches file | Yes | Yes |
 | Recommended for config files | Yes | No |
 
----
