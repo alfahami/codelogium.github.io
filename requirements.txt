@@ -5,3 +5,4 @@ mkdocs-blogging-plugin
 mkdocs-categories-plugin 
 mkdocs-git-committers-plugin 
 mkdocs-git-revision-date-localized-plugin
+mkdocs-material[imaging]
