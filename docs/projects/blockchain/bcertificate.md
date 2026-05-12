@@ -62,10 +62,10 @@ The network consists of organizations (universities) that each run their own pee
 
 **Key chaincode operations:**
 
-- `initLedger` — seeds the ledger with initial certificates on deploy
-- `addCertificate` — writes a new credential to the blockchain
-- `queryCertificate` — retrieves a credential by ID
-- `queryAllCertificates` — returns all credentials in the ledger
+- `initLedger`: seeds the ledger with initial certificates on deploy
+- `addCertificate`: writes a new credential to the blockchain
+- `queryCertificate` : retrieves a credential by ID
+- `queryAllCertificates`: returns all credentials in the ledger
 
 ---
 
@@ -145,10 +145,10 @@ Then visit:
 
 ## Key Learnings
 
-- **Hyperledger Fabric architecture** — understanding organizations, peers, orderers, channels, and the Certificate Authority
-- **Chaincode lifecycle** — packaging, installing, approving, and committing chaincode across organizations
+- **Hyperledger Fabric architecture**: understanding organizations, peers, orderers, channels, and the Certificate Authority
+- **Chaincode lifecycle**: packaging, installing, approving, and committing chaincode across organizations
 - **Fabric SDK** — enrolling admins, registering users, and submitting transactions from a Node.js client
-- **Docker networking** — how Fabric spins up containers for each peer and orderer
+- **Docker networking**: how Fabric spins up containers for each peer and orderer
 - **Permissioned vs public blockchain** — why enterprise use cases need identity and access control that public chains like Ethereum don't provide
 
 ---
