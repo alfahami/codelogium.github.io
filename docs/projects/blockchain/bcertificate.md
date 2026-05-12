@@ -5,7 +5,7 @@ categories:
   - Blockchain
   - Projects
 description: "A Hyperledger Fabric blockchain network that automates the issuance, dispatch, and management of university digital credentials; diplomas, transcripts, and degree certifications."
-reading_time: 5
+reading_time: 6
 ---
 
 # BCertificate
@@ -13,9 +13,9 @@ reading_time: 5
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By: &nbsp;<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      By: <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/blockchain/"><em>Blockchain</em></a>&nbsp;•&nbsp;
-      ⏱️ ~5 min read</span>
+      ⏱️ ~6 min read</span>
     </span>
   </div>
 </div>
@@ -30,7 +30,7 @@ BCertificate is a full blockchain application built on **Hyperledger Fabric v2.x
 
 The core idea: universities write credentials to a distributed ledger. Employers and institutions can verify them without contacting the university directly. No more fake diplomas, no more verification delays.
 
-This was my first Hyperledger Fabric project, built to get hands-on with enterprise blockchain before extending the concept to land certificate management in [landcertificate](landcertificate.md).
+This was my first Hyperledger Fabric project, built at the Faculty of Science in Kenitra as part of my Mathematics and Computer Science studies. The main focus was getting familiar with how Hyperledger Fabric builds and handles blockchain rather than polishing the user experience.
 
 ---
 
@@ -45,18 +45,20 @@ This was my first Hyperledger Fabric project, built to get hands-on with enterpr
 | Infrastructure | Docker |
 | SDK | Fabric SDK Node, Fabric Java SDK |
 
+Tested on Linux/Debian 10 Buster, WSL/Debian 10 Buster, and WSL/Ubuntu.
+
 ---
 
 ## How It Works
 
-The network consists of organizations (universities) that each run their own peers. A shared channel connects them, and the chaincode (smart contract) runs on all peers.
+The network consists of organizations (universities) that each run their own peers. A shared channel connects them, and the chaincode (smart contract) runs across all peers.
 
 **Flow:**
 
 1. Admin enrolls and registers a user against the Certificate Authority
 2. University submits a credential transaction; the chaincode validates and writes it to the ledger
 3. Anyone with network access can query a certificate by ID
-4. Bulk import via Excel sheet is supported for adding multiple credentials at once
+4. Bulk import via Excel sheet (.xls) is supported for adding multiple credentials at once
 
 **Key chaincode operations:**
 
@@ -72,13 +74,13 @@ The network consists of organizations (universities) that each run their own pee
 ```
 bcertificate/
 ├── certificate-network/
-│   ├── chaincode/certificate/   # Smart contract (JS and Java)
-│   ├── certificate-starter/
-│   │   ├── startBCertificate.sh # Starts the full network
-│   │   ├── networkDown.sh       # Tears down the network
-│   │   ├── javascript/          # Admin enroll, user register, query scripts
-│   │   ├── java/                # Java admin scripts
-│   │   └── apiserver/           # Node.js REST API + web app
+│   ├── chaincode/certificate/      # Smart contract (JS and Java)
+│   └── certificate-starter/
+│       ├── startBCertificate.sh    # Starts the full network
+│       ├── networkDown.sh          # Tears down the network
+│       ├── javascript/             # Admin enroll, user register, query scripts
+│       ├── java/                   # Java admin scripts (partial)
+│       └── apiserver/              # Node.js REST API + web app
 └── screenshots/
 ```
 
@@ -86,10 +88,27 @@ bcertificate/
 
 ## Running It
 
-Prerequisites: Docker installed and configured. Hyperledger Fabric binaries set up.
+!!! note "TL;DR"
+    If you're already familiar with Hyperledger Fabric and have everything set up, go directly to `certificate-network/certificate-starter/` and run the commands below.
+
+**Prerequisites:**
+
+- Docker installed and configured
+- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html))
+- curl installed
+
+**Install Hyperledger Fabric:**
 
 ```bash
-# Start the network, deploy chaincode, initialize ledger
+curl -sSL https://bit.ly/2ysbOFE | bash -s
+```
+
+If the above link doesn't work, download [fabric-samples v2.0.0](https://github.com/hyperledger/fabric-samples/releases/tag/v2.0.0-beta) directly.
+
+**Start the network:**
+
+```bash
+# From certificate-network/certificate-starter/
 ./startBCertificate.sh
 
 # Enroll admin, register user, query initial data
@@ -108,6 +127,22 @@ Then visit:
 
 ---
 
+## Screenshots
+
+**All certificates in the ledger:**
+
+![All certificates](https://raw.githubusercontent.com/alfahami/bcertificate/main/screenshots/allcertificates.png)
+
+**Adding a certificate (with Excel bulk import support):**
+
+![Add certificate](https://raw.githubusercontent.com/alfahami/bcertificate/main/screenshots/add-certificate.png)
+
+**Querying a specific certificate:**
+
+![Certificate details](https://raw.githubusercontent.com/alfahami/bcertificate/main/screenshots/git-github.png)
+
+---
+
 ## Key Learnings
 
 - **Hyperledger Fabric architecture** — understanding organizations, peers, orderers, channels, and the Certificate Authority
@@ -120,6 +155,12 @@ Then visit:
 
 ## Links
 
-- [:fontawesome-brands-github: GitHub Repository](https://github.com/alfahami/bcertificate)
+- [GitHub Repository](https://github.com/alfahami/bcertificate)
 - [Hyperledger Fabric Docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)
 - [Related project: landcertificate](landcertificate.md)
+
+---
+
+## License
+
+MIT — open source and free to use.
