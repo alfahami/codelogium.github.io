@@ -13,7 +13,7 @@ reading_time: 6
 <div class="blog-meta">
   <div class="blog-meta-container">
     <span class="meta-content">
-      By: <strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
+      By: &nbsp;<strong><a href="https://github.com/alfahami" target="_blank">Al-Fahami Toihir</a></strong>
       &nbsp; <span class="category-timer-mobile"> 🏷️&nbsp;<a href="/categories/blockchain/"><em>Blockchain</em></a>&nbsp;•&nbsp;
       ⏱️ ~6 min read</span>
     </span>
@@ -155,8 +155,9 @@ Then visit:
 
 ## Links
 
-- [GitHub Repository](https://github.com/alfahami/bcertificate)
-- [Hyperledger Fabric Docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)
+- <a href="https://github.com/alfahami/bcertificate" target="_blank">↗ GitHub Repository</a>
+- <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/" target="_blank">Hyperledger Fabric Docs</a>
+
 - [Related project: landcertificate](landcertificate.md)
 
 ---
