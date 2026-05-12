@@ -63,6 +63,8 @@ nav:
   - Spring:
       - Overview: spring/index.md
       - JWT Auth: spring/jwt-auth.md
+  - Projects:
+      - Overview: projects/index.md
   - Lab:
       - Overview: lab/index.md
       - Git:
