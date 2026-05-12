@@ -1,6 +1,6 @@
 ---
 title: "BCertificate"
-date: 2021-01-01
+date: 2021-12-03
 categories:
   - Blockchain
   - Projects
@@ -121,9 +121,9 @@ node apiserver.js
 
 Then visit:
 
-- `http://localhost:8080/api/allcertificates` — all credentials in the ledger
-- `http://localhost:8080/api/addcertificate` — add a new credential
-- `http://localhost:8080/api/query/CERT11` — query a specific certificate
+- `http://localhost:8080/api/allcertificates`: all credentials in the ledger
+- `http://localhost:8080/api/addcertificate`: add a new credential
+- `http://localhost:8080/api/query/CERT11`: query a specific certificate
 
 ---
 
@@ -147,9 +147,9 @@ Then visit:
 
 - **Hyperledger Fabric architecture**: understanding organizations, peers, orderers, channels, and the Certificate Authority
 - **Chaincode lifecycle**: packaging, installing, approving, and committing chaincode across organizations
-- **Fabric SDK** — enrolling admins, registering users, and submitting transactions from a Node.js client
+- **Fabric SDK**: enrolling admins, registering users, and submitting transactions from a Node.js client
 - **Docker networking**: how Fabric spins up containers for each peer and orderer
-- **Permissioned vs public blockchain** — why enterprise use cases need identity and access control that public chains like Ethereum don't provide
+- **Permissioned vs public blockchain**: why enterprise use cases need identity and access control that public chains like Ethereum don't provide
 
 ---
 
@@ -163,4 +163,4 @@ Then visit:
 
 ## License
 
-MIT — open source and free to use.
+MIT - open source and free to use.
