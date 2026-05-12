@@ -1,6 +1,6 @@
 ---
 title: "LandCertificate"
-date: 2021-06-01
+date: 2023-06-26
 categories:
   - Blockchain
   - Projects

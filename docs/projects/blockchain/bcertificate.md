@@ -1,6 +1,6 @@
 ---
 title: "BCertificate"
-date: 2021-01-01
+date: 2021-12-03
 categories:
   - Blockchain
   - Projects
