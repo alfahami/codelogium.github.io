@@ -178,8 +178,8 @@ Then visit:
 
 ## Links
 
-- [GitHub Repository](https://github.com/alfahami/landcertificate)
-- [Hyperledger Fabric Docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)
+- <a href="https://github.com/alfahami/landcertificate" target="_blank">↗ GitHub Repository</a>
+- <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/" target="_blank">Hyperledger Fabric Docs</a>
 - [Related project: bcertificate](bcertificate.md)
 
 ---
