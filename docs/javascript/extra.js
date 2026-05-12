@@ -10,7 +10,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const path = window.location.pathname;
   
-  const overviewSlugs = ['/', '/network/', '/databases/', '/java/', '/spring/', '/lab/', '/blog/', '/categories/', '/tags/'];
+  const overviewSlugs = ['/', '/network/', '/databases/', '/java/', '/spring/', '/lab/', '/blog/', '/categories/', '/tags/', '/projects/'];
   const isOverviewPage = overviewSlugs.includes(path)
     || path.endsWith('/index.html')
     || ['categories', 'tags'].some(p => path.includes(p));

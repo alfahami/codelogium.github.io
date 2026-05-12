@@ -43,7 +43,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.details
   - attr_list
   - tables
@@ -63,6 +65,8 @@ nav:
   - Spring:
       - Overview: spring/index.md
       - JWT Auth: spring/jwt-auth.md
+  - Projects:
+      - Overview: projects/index.md
   - Lab:
       - Overview: lab/index.md
       - Git:
@@ -133,6 +137,8 @@ plugins:
       enabled: true
   - tags
   # - social: can be installed later preferably in a linux machine
+  - social:
+      enabled: !ENV [CI, false]
   - git-committers:
       repository: codelogium/codelogium.github.io
       branch: main
@@ -150,3 +156,4 @@ plugins:
         - spring/index.md
         - databases/index.md
         - lab/index.md
+        - projects/index.md
