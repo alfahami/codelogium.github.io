@@ -137,6 +137,8 @@ plugins:
       enabled: true
   - tags
   # - social: can be installed later preferably in a linux machine
+  - social:
+      enabled: !ENV [CI, false]
   - git-committers:
       repository: codelogium/codelogium.github.io
       branch: main
@@ -154,3 +156,4 @@ plugins:
         - spring/index.md
         - databases/index.md
         - lab/index.md
+        - projects/index.md
