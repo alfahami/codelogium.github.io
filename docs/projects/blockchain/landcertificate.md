@@ -98,7 +98,7 @@ landcertificate/
 **Prerequisites:**
 
 - Docker installed and configured
-- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html)){target="_blank"}
+- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html){target="_blank"})
 
 **Install Hyperledger Fabric:**
 
