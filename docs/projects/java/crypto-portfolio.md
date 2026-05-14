@@ -32,7 +32,7 @@ The Crypto Portfolio API lets users manage portfolios of cryptocurrency holdings
 The app consists of two services:
 
 - **Portfolio Service** (port 8080) : manages users, portfolios, and holdings
-- **Exchange Rate Service** (port 8081) : fetches real-time crypto prices from [CoinMarketCap](https://coinmarketcap.com/api/documentation/v1/)
+- **Exchange Rate Service** (port 8081) : fetches real-time crypto prices from [CoinMarketCap](https://coinmarketcap.com/api/documentation/v1/){target="_blank"}
 
 !!! note "Architecture Note"
     While the services run on separate ports and follow a modular structure, this is not a full microservices architecture. It's a step toward understanding service separation and inter-service communication via [WebClient](https://docs.spring.io/spring-framework/reference/web/webflux-webclient.html){target="_blank"}.
