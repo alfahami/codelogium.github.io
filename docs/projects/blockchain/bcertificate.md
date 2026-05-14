@@ -155,7 +155,7 @@ Then visit:
 
 ## Links
 
-- <a href="https://github.com/alfahami/bcertificate" target="_blank">↗ GitHub Repository</a>
+- <a href="https://github.com/alfahami/bcertificate" target="_blank">GitHub Repository</a>
 - <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/" target="_blank">Hyperledger Fabric Docs</a>
 
 - [Related project: landcertificate](landcertificate.md)
