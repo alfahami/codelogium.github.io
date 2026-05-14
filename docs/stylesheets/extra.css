@@ -237,8 +237,8 @@ body[data-md-color-scheme="slate"] blockquote:before {
   text-decoration: none;
 }
 
-/* External link icon */
-.md-typeset a[href^="http"]::after {
+/* External link icon — only for truly external links */
+.md-typeset a[href^="http"]:not([href*="codelogium.github.io"])::after {
   content: "";
   display: inline-block;
   background-color: var(--md-primary-fg-color);

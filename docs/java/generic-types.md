@@ -39,7 +39,7 @@ Generics allow you to write a class or method that operates on objects of variou
 
 Generics in Java ensure type safety, reduce boilerplate, prevent runtime errors (like `ClassCastException`), and make the code easier to read and maintain.
 
-According to the [official Java documentation](http://docs.oracle.com/javase/tutorial/java/generics/types.html):
+According to the [official Java documentation](http://docs.oracle.com/javase/tutorial/java/generics/types.html){target="_blank"}:
 
 <blockquote><p>A generic type is a generic class or interface that is parameterized over types.</p></blockquote>
 
@@ -289,7 +289,7 @@ Java generics allow us to write flexible, type-safe code. In this post, we explo
 
 We also saw how Java Collections use generics under the hood and discussed **type erasure** at runtime.
 
-The full Java file for this learning can be found here: [GenericType.java](https://github.com/codelogium/codelogium/blob/main/java/GenericType.java)
+The full Java file for this learning can be found here: [GenericType.java](https://github.com/codelogium/codelogium/blob/main/java/GenericType.java){target="_blank"}
 
 ---
 

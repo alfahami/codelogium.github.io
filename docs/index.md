@@ -65,6 +65,7 @@ This is more of a log than a guide: raw, honest, sometimes chaotic.
 - [🗃️ Databases](databases/index.md)
 - [☕ Java](java/index.md)
 - [🌱 Spring](spring/index.md)
+- [🛠️ Projects](projects/index.md)
 - [🧪 Lab](lab/index.md)
 - [📝 Blog](blog/index.md)
 

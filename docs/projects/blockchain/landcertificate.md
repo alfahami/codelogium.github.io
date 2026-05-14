@@ -98,7 +98,7 @@ landcertificate/
 **Prerequisites:**
 
 - Docker installed and configured
-- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html))
+- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html)){target="_blank"}
 
 **Install Hyperledger Fabric:**
 
@@ -178,7 +178,7 @@ Then visit:
 
 ## Links
 
-- <a href="https://github.com/alfahami/landcertificate" target="_blank">↗ GitHub Repository</a>
+- <a href="https://github.com/alfahami/landcertificate" target="_blank">GitHub Repository</a>
 - <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/" target="_blank">Hyperledger Fabric Docs</a>
 - [Related project: bcertificate](bcertificate.md)
 
@@ -186,4 +186,4 @@ Then visit:
 
 ## License
 
-[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/)
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0/){target="_blank"}

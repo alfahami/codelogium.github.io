@@ -94,7 +94,7 @@ bcertificate/
 **Prerequisites:**
 
 - Docker installed and configured
-- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html))
+- Hyperledger Fabric binaries set up ([official docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html)){target="_blank"}
 - curl installed
 
 **Install Hyperledger Fabric:**
@@ -103,7 +103,7 @@ bcertificate/
 curl -sSL https://bit.ly/2ysbOFE | bash -s
 ```
 
-If the above link doesn't work, download [fabric-samples v2.0.0](https://github.com/hyperledger/fabric-samples/releases/tag/v2.0.0-beta) directly.
+If the above link doesn't work, download [fabric-samples v2.0.0](https://github.com/hyperledger/fabric-samples/releases/tag/v2.0.0-beta){target="_blank"} directly.
 
 **Start the network:**
 
@@ -155,7 +155,7 @@ Then visit:
 
 ## Links
 
-- <a href="https://github.com/alfahami/bcertificate" target="_blank">↗ GitHub Repository</a>
+- <a href="https://github.com/alfahami/bcertificate" target="_blank">GitHub Repository</a>
 - <a href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/" target="_blank">Hyperledger Fabric Docs</a>
 
 - [Related project: landcertificate](landcertificate.md)
