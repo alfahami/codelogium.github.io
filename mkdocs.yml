@@ -1,7 +1,7 @@
 site_name: Codelogium
 site_description: Developer logs, notes, and learning paths
 site_url: https://codelogium.github.io
-repo_url: https://github.com/alfahami/codelogium.github.io.git
+repo_url: https://github.com/alfahami/codelogium.github.io
 repo_name: alfahami/codelogium
 
 theme:
