@@ -255,6 +255,11 @@ body[data-md-color-scheme="slate"] blockquote:before {
   opacity: 0.6;
 }
 
+.md-typeset a[href^="http"]:not([href*="codelogium.github.io"])::after,
+.md-footer a::after {
+  display: none !important;
+}
+
 /* ============================================================
    CONTENT VISIBILITY
    ============================================================ */
