@@ -1951,3 +1951,438 @@ body:has(#hero-title) .md-content__inner {
   margin-right: 0.35em;
   vertical-align: -0.2em;
 }
+
+/* Sidebar groups (navigation.sections): show only the group you're reading (Blockchain
+   projects don't list the Java ones); the section pages' cards link across groups */
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary .md-nav__item--section:not(.md-nav__item--active) {
+    display: none;
+  }
+}
+
+/* ============================================================
+   PROJECT GRID CARDS (Zensical "grid cards" on the Projects page), in the site's card style
+   ============================================================ */
+.md-typeset .project-sections .grid.cards > ul > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem 1.4rem 1.2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 6px;
+  box-shadow: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+/* The whole card is clickable: the "View project" link stretches over it */
+.md-typeset .project-sections .grid.cards > ul > li:hover {
+  border-color: var(--card-line);
+  background: var(--card-hover);
+  box-shadow: inset 0 3px 0 var(--group-accent), 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Title line: icon in a tinted square, then the name */
+.md-typeset .project-sections .grid.cards > ul > li > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:first-child .twemoji {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 7px;
+  color: var(--group-accent);
+  background: color-mix(in srgb, var(--group-accent) 12%, transparent);
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:first-child .twemoji svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > hr {
+  margin: 1rem 0;
+  border-color: var(--card-line);
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:not(:first-child):not(:last-child) {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: var(--md-default-fg-color--light);
+}
+
+/* "View project →": the site's mono call to action, arrow nudges on hover */
+.md-typeset .project-sections .grid.cards > ul > li > p:last-child {
+  margin: auto 0 0;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--group-accent);
+  text-decoration: none;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:last-child a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li > p:last-child a .twemoji svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.2s;
+}
+
+.md-typeset .project-sections .grid.cards > ul > li:hover > p:last-child a .twemoji svg {
+  transform: translateX(3px);
+}
+
+
+/* One accent per project group, used only on the details (icon tile, link, hover bar, label);
+   card backgrounds stay neutral. Light values pass 4.5:1 on white, dark ones on the dark cards. */
+.project-sections {
+  --group-accent: var(--md-primary-fg-color);
+}
+
+.project-section#blockchain  { --group-accent: #6D28D9; }
+.project-section#fullstack   { --group-accent: #0A6650; }
+.project-section#ml          { --group-accent: #B45309; }
+.project-section#mini        { --group-accent: #1D4ED8; }
+.project-section#web         { --group-accent: #BE123C; }
+
+[data-md-color-scheme="slate"] .project-section#blockchain { --group-accent: #A78BFA; }
+[data-md-color-scheme="slate"] .project-section#fullstack  { --group-accent: #34D399; }
+[data-md-color-scheme="slate"] .project-section#ml         { --group-accent: #FBBF24; }
+[data-md-color-scheme="slate"] .project-section#mini       { --group-accent: #60A5FA; }
+[data-md-color-scheme="slate"] .project-section#web        { --group-accent: #FB7185; }
+
+/* The group label takes its accent, with a short bar under it, and a bit more air between groups */
+.md-typeset .project-section .home-eyebrow {
+  color: var(--group-accent);
+}
+
+.md-typeset .project-section .home-eyebrow::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-top: 0.45rem;
+  background: var(--group-accent);
+  opacity: 0.7;
+}
+
+.project-section {
+  margin-bottom: 3.5rem;
+}
+
+/* Section index pages reuse the grid cards, with the accent of their home page card */
+.project-sections--lab  { --group-accent: #C2410C; }
+.project-sections--lang { --group-accent: #4338CA; }
+.project-sections--c    { --group-accent: #2563EB; }
+.project-sections--cs   { --group-accent: #0E7A60; }
+
+[data-md-color-scheme="slate"] .project-sections--lab  { --group-accent: #FB923C; }
+[data-md-color-scheme="slate"] .project-sections--lang { --group-accent: #A5B4FC; }
+[data-md-color-scheme="slate"] .project-sections--c    { --group-accent: #60A5FA; }
+[data-md-color-scheme="slate"] .project-sections--cs   { --group-accent: #34D399; }
+
+/* Cards keep one width everywhere: a lone card doesn't stretch across the page */
+.md-typeset .project-sections .grid.cards {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+}
+
+/* ============================================================
+   TRACK PANELS (C, CS Fundamentals): a learning track at a glance, with a checklist
+   Mark progress by adding class="is-done" to a list item and updating the count.
+   ============================================================ */
+.track-panels {
+  --group-accent: var(--md-primary-fg-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  /* Each panel keeps its own height, so opening one list doesn't stretch its neighbor */
+  align-items: start;
+  gap: 1rem;
+  padding: 2.5rem 0 1rem;
+}
+
+.track-panels--c  { --group-accent: #2563EB; }
+.track-panels--cs { --group-accent: #0E7A60; }
+[data-md-color-scheme="slate"] .track-panels--c  { --group-accent: #60A5FA; }
+[data-md-color-scheme="slate"] .track-panels--cs { --group-accent: #34D399; }
+
+.md-typeset .track-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.5rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 6px;
+}
+
+/* The main track of the section stands out with the accent bar the cards show on hover */
+.md-typeset .track-panel--featured {
+  box-shadow: inset 0 3px 0 var(--group-accent), 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset .track-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.md-typeset .track-panel__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 7px;
+  color: var(--group-accent);
+  background: color-mix(in srgb, var(--group-accent) 12%, transparent);
+}
+
+.md-typeset .track-panel__icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.md-typeset .track-panel__title {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.md-typeset .track-panel__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.md-typeset .track-panel__count {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--group-accent);
+}
+
+/* Checklist: an open circle for what's next, a check in the accent color once done */
+.md-typeset ul.track-panel__list {
+  margin: 1rem 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset ul.track-panel__list li {
+  position: relative;
+  margin: 0 0 0.55rem;
+  padding-left: 1.6rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.md-typeset ul.track-panel__list li::before {
+  content: "";
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  width: 0.95em;
+  height: 0.95em;
+  border: 1.5px solid var(--md-default-fg-color--lighter);
+  border-radius: 50%;
+}
+
+.md-typeset ul.track-panel__list li.is-done::before {
+  border-color: var(--group-accent);
+  background: var(--group-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 70% no-repeat;
+}
+
+/* The source (book, course) is a quiet link in the meta line */
+.md-typeset .track-panel__meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--card-line);
+  text-underline-offset: 0.25em;
+}
+
+.md-typeset .track-panel__meta a:hover {
+  color: var(--group-accent);
+}
+
+/* The rest of the list folds away; "Show all" opens it in place */
+.md-typeset details.track-panel__all {
+  margin: -0.65rem 0 1.2rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  font-size: inherit;
+}
+
+.md-typeset details.track-panel__all > summary {
+  display: inline-block;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--group-accent);
+  background: none;
+  cursor: pointer;
+  list-style: none;
+}
+
+.md-typeset details.track-panel__all > summary::-webkit-details-marker,
+.md-typeset details.track-panel__all > summary::before,
+.md-typeset details.track-panel__all > summary::after {
+  display: none;
+}
+
+.md-typeset details.track-panel__all > summary .track-panel__show span {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset details.track-panel__all .track-panel__hide,
+.md-typeset details.track-panel__all[open] .track-panel__show {
+  display: none;
+}
+
+.md-typeset details.track-panel__all[open] .track-panel__hide {
+  display: inline;
+}
+
+/* Opened, the rest continues the list with the same spacing, and "Show less" moves below it */
+.md-typeset details.track-panel__all[open] {
+  display: flex;
+  flex-direction: column;
+  margin-top: -1.2rem;
+}
+
+.md-typeset details.track-panel__all[open] > summary {
+  order: 1;
+  align-self: flex-start;
+  margin-top: 0.4rem;
+}
+
+.md-typeset details.track-panel__all > ul.track-panel__list {
+  margin: 0;
+}
+
+/* Bottom action: the site's button to the notes, or a muted placeholder until they exist */
+/* In progress: the circle half filled, like the course's own tracker */
+.md-typeset ul.track-panel__list li.is-current::before {
+  border-color: var(--group-accent);
+  background: linear-gradient(90deg, var(--group-accent) 50%, transparent 50%);
+}
+
+.md-typeset ul.track-panel__list li.is-current {
+  font-weight: 600;
+}
+
+.md-typeset .track-panel__btn {
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.md-typeset .track-panel__btn--soon {
+  display: flex;
+  padding: 0.75em 1em;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+  border: 1px dashed var(--card-line);
+  border-radius: 6px;
+}
+
+/* About: the two "What I do" panels sit in the text column, side by side when it's wide enough */
+.track-panels--about {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  /* Nothing expands here: equal heights keep the two buttons on one line */
+  align-items: stretch;
+  padding: 0.6rem 0 1.6rem;
+}
+
+.md-typeset .track-panels--about ul.track-panel__list li {
+  font-size: 0.72rem;
+}
+
+.md-typeset .about__text .track-panels--about p {
+  text-align: left;
+}
+
+/* Current track (C, CS Fundamentals): a small light travels around the border, in the section's
+   accent, in place of the static top bar. About keeps the bar: there it means "featured". */
+@property --trail-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.md-typeset .track-panels:not(.track-panels--about) .track-panel--featured {
+  position: relative;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset .track-panels:not(.track-panels--about) .track-panel--featured::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--trail-angle),
+    transparent 0deg 280deg,
+    color-mix(in srgb, var(--group-accent) 35%, transparent) 320deg,
+    var(--group-accent) 352deg,
+    transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: track-trail 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes track-trail {
+  to { --trail-angle: 360deg; }
+}
+
+/* Reduced motion: a still accent outline instead of the moving light */
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .track-panels:not(.track-panels--about) .track-panel--featured::before {
+    animation: none;
+    background: color-mix(in srgb, var(--group-accent) 55%, transparent);
+  }
+}

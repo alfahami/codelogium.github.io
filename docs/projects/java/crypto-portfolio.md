@@ -16,6 +16,10 @@ stack:
   - H2
   - JUnit
 icon: lucide/wallet
+tags:
+  - Java
+  - Spring
+  - Microservices
 ---
 
 > "Built to learn, WebClient, reactive programming, and real API integration, not just theory. The kind of project you do on a job test."

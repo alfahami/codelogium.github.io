@@ -6,7 +6,6 @@ hide:
   - navigation
   - feedback
   - footer
-icon: lucide/coffee
 ---
 
 <section class="section-hero home-band home-band--dark" data-search-exclude>
@@ -15,20 +14,24 @@ icon: lucide/coffee
   <p class="section-hero__lead">Notes from working with Java in real projects: generics, design patterns, collections, Spring integrations. Written mid-struggle, not after.</p>
 </section>
 
-<div class="project-sections" data-search-exclude>
-  <div class="project-section">
-    <div class="project-grid">
+<div class="project-sections project-sections--lang" data-search-exclude markdown>
 
-      <a class="project-card" href="generic-types/">
-        <div class="project-card__body">
-          <h3 class="project-card__title">Java Generics</h3>
-          <p class="project-card__desc">How Java generics work across interfaces, classes, and multi-type scenarios, with real examples. Covers type parameters, bounded wildcards, and the patterns that make reusable code actually work without casting everything.</p>
-        </div>
-        <div class="project-card__footer">
-          <span class="project-card__cta">Read article &rsaquo;</span>
-        </div>
-      </a>
+<div class="project-section" markdown>
 
-    </div>
-  </div>
+<div class="grid cards" markdown>
+
+-   :lucide-braces:{ .lg .middle } __Java Generics__
+
+    ---
+
+    How generics work across interfaces, classes and multi-type scenarios, with real examples.
+
+    ---
+
+    [Read article :lucide-arrow-right:](/java/generic-types/)
+
+</div>
+
+</div>
+
 </div>

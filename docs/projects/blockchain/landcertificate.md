@@ -15,6 +15,8 @@ stack:
   - MongoDB Atlas
   - Docker
 icon: lucide/map
+tags:
+  - Blockchain
 ---
 
 > "A blockchain network that lets land conservers certify land ownership on an immutable ledger; helping against land ownership fraud and disputes."

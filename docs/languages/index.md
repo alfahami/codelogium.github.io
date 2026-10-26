@@ -6,7 +6,6 @@ hide:
   - navigation
   - feedback
   - footer
-icon: lucide/code
 ---
 
 <section class="section-hero home-band home-band--dark" data-search-exclude>
@@ -20,28 +19,31 @@ icon: lucide/code
   <a href="#python">Python</a>
 </nav>
 
-<div class="project-sections" data-search-exclude>
+<div class="project-sections project-sections--lang" data-search-exclude markdown>
 
-  <div class="project-section" id="java">
-    <a class="home-eyebrow" href="/java/">Java</a>
-    <div class="project-grid">
+<div class="project-section" markdown id="java">
 
-      <a class="project-card" href="/java/generic-types/">
-        <div class="project-card__body">
-          <h3 class="project-card__title">Java Generics</h3>
-          <p class="project-card__desc">How Java generics work across interfaces, classes, and multi-type scenarios, with real examples. Covers type parameters, bounded wildcards, and the patterns that make reusable code actually work without casting everything.</p>
-        </div>
-        <div class="project-card__footer">
-          <span class="project-card__cta">Read article &rsaquo;</span>
-        </div>
-      </a>
+<a class="home-eyebrow" href="/java/">Java</a>
 
-    </div>
-  </div>
+<div class="grid cards" markdown>
 
-  <div class="project-section" id="python">
-    <span class="home-eyebrow">Python</span>
-    <p class="section-coming-soon"><em>Python notes coming soon.</em></p>
-  </div>
+-   :lucide-braces:{ .lg .middle } __Java Generics__
+
+    ---
+
+    How generics work across interfaces, classes and multi-type scenarios, with real examples.
+
+    ---
+
+    [Read article :lucide-arrow-right:](/java/generic-types/)
+
+</div>
+
+</div>
+
+<div class="project-section" id="python">
+  <span class="home-eyebrow">Python</span>
+  <p class="section-coming-soon"><em>Python notes coming soon.</em></p>
+</div>
 
 </div>

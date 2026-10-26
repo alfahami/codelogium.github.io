@@ -14,6 +14,8 @@ stack:
   - Pug
   - Docker
 icon: lucide/graduation-cap
+tags:
+  - Blockchain
 ---
 
 > "A blockchain network that lets schools and universities add credentials to an immutable ledger; making diploma fraud a thing of the past."

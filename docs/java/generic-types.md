@@ -10,6 +10,8 @@ reading_time: 5
 summary: |
   Dive deeper into Java generics through interfaces, key-value pairs, and multi-type generic classes. Understand how to apply them in real use cases like repositories and collections.
 icon: lucide/braces
+tags:
+  - Java
 ---
 
 > "Write once, use many": Generics let you write flexible and reusable code.

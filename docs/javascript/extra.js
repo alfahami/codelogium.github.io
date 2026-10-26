@@ -25,6 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
   injectFooterResources();
 });
 
+// "Back to top": starts slow and picks up speed toward the top, instead of the browser's near-instant
+// smooth scroll. Longer pages take a little longer (0.6 to 1.1 s). Skipped for reduced motion.
+document.addEventListener('click', e => {
+  if (!e.target.closest('.md-top')) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+
+  const start = window.scrollY;
+  const duration = Math.min(1100, Math.max(600, start * 0.25));
+  const ease = t => t * t * t;
+  const root = document.documentElement;
+  const previous = root.style.scrollBehavior;
+  root.style.scrollBehavior = 'auto';
+  let t0;
+  const step = now => {
+    t0 ??= now;
+    const t = Math.min(1, (now - t0) / duration);
+    window.scrollTo(0, start * (1 - ease(t)));
+    if (t < 1) requestAnimationFrame(step);
+    else root.style.scrollBehavior = previous;
+  };
+  requestAnimationFrame(step);
+}, true);
+
 // Edit this list to add or remove footer links.
 const FOOTER_COLUMNS = [
   {

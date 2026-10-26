@@ -7,6 +7,9 @@ categories:
 description: "Real git issues encountered during development; root causes, investigation steps, and fixes."
 reading_time: 8
 icon: lucide/bug
+tags:
+  - Git
+  - Debugging
 ---
 
 > "When git behaves unexpectedly, the answer is almost always in the history."

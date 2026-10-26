@@ -13,7 +13,9 @@ cover_ratio: 1200 / 380
 cover_share: assets/posts/git.jpg
 social:
   cards: false
-icon: lucide/git-graph
+tags:
+  - Git
+  - Tooling
 ---
 
 > "Version control is not just a tool; it's a habit."
@@ -26,25 +28,53 @@ This section is a **living reference**, not a tutorial. Every entry here came fr
 
 ## What's Inside
 
-**[Daily Commands](basics.md)**
+<div class="project-sections project-sections--lab" markdown>
 
-The commands you run every day: init, add, commit, status, .gitignore, aliases, and commit message conventions.
+<div class="grid cards" markdown>
 
----
+-   :lucide-terminal:{ .lg .middle } __Daily Commands__
 
-**[Branches & Stash](branching-stash.md)**
+    ---
 
-Branching strategies, stash workflows, reverting commits, resetting history, and inspecting specific commits.
+    The commands you run every day: init, add, commit, status, .gitignore, aliases and commit conventions.
 
----
+    ---
 
-**[Remotes & Workflows](remotes-workflows.md)**
+    [Read article :lucide-arrow-right:](basics.md)
 
-Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branches, and Git LFS.
+-   :lucide-git-branch:{ .lg .middle } __Branches & Stash__
 
-**[Troubleshooting](issues.md)**
+    ---
 
-Real git issues encountered during development: root causes, investigation steps, and fixes.
+    Branching strategies, stash workflows, reverting commits, resetting history and inspecting commits.
+
+    ---
+
+    [Read article :lucide-arrow-right:](branching-stash.md)
+
+-   :lucide-git-pull-request:{ .lg .middle } __Remotes & Workflows__
+
+    ---
+
+    Push, pull, SSH setup, fork workflows, multiple Git identities, divergent branches and Git LFS.
+
+    ---
+
+    [Read article :lucide-arrow-right:](remotes-workflows.md)
+
+-   :lucide-bug:{ .lg .middle } __Troubleshooting__
+
+    ---
+
+    Real git issues from development: root causes, investigation steps and fixes.
+
+    ---
+
+    [Read article :lucide-arrow-right:](issues.md)
+
+</div>
+
+</div>
 
 ---
 

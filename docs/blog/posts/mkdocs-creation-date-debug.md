@@ -9,6 +9,10 @@ categories:
   - Debugging
 description: "A full debugging story of why a brand new article was showing 11 months ago as its creation date on a MkDocs Material site, and everything I tried before finding the real fix."
 reading_time: 8
+tags:
+  - MkDocs
+  - Git
+  - Debugging
 ---
 
 # Why My MkDocs Article Showed 11 Months Ago as Creation Date

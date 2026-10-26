@@ -7,6 +7,9 @@ categories:
 description: "Branching strategies, stash workflows, reverting commits, resetting history, and inspecting specific commits."
 reading_time: 6
 icon: lucide/git-branch
+tags:
+  - Git
+  - Tooling
 ---
 
 > "A branch is a lightweight movable pointer to one of these commits."

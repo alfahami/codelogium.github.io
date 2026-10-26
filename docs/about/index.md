@@ -23,13 +23,49 @@ hide:
 
   <div class="about__text">
     <span class="home-eyebrow">What I do</span>
-    <p>I'm Al-Fahami Toihir, a software engineer at DXC Technology. Day to day I build microservices with Java and Spring Boot, using hexagonal architecture, domain-driven design and clean code practices.</p>
-    <p>Outside of work I keep going back to the foundations: C, how computers actually work, algorithms and data structures. This site is my notebook for all of it.</p>
+    <p>I'm Al-Fahami Toihir, a software engineer at DXC Technology. Outside of work I keep going back to the foundations, and this site is my notebook for all of it.</p>
+    <div class="track-panels track-panels--about">
+      <div class="track-panel track-panel--featured">
+        <div class="track-panel__head">
+          <span class="track-panel__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-server-cog" viewBox="0 0 24 24"><path d="m10.852 14.772-.383.923M13.148 14.772a3 3 0 1 0-2.296-5.544l-.383-.923M13.148 9.228l.383-.923"/><path d="m13.53 15.696-.382-.924a3 3 0 1 1-2.296-5.544M14.772 10.852l.923-.383M14.772 13.148l.923.383"/><path d="M4.5 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.5M4.5 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-.5M6 18h.01M6 6h.01M9.228 10.852l-.923-.383M9.228 13.148l-.923.383"/></svg></span>
+          <h3 class="track-panel__title">Backend Engineering</h3>
+        </div>
+        <div class="track-panel__meta">
+          <span>DXC Technology</span>
+          <span class="track-panel__count">Day job</span>
+        </div>
+        <ul class="track-panel__list">
+          <li class="is-done">Microservices with Java and Spring Boot</li>
+          <li class="is-done">Hexagonal architecture</li>
+          <li class="is-done">Domain-driven design</li>
+          <li class="is-done">Clean code practices</li>
+        </ul>
+        <a class="home-btn track-panel__btn" href="/assets/about/Al-Fahami-Toihir-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      </div>
+      <div class="track-panel">
+        <div class="track-panel__head">
+          <span class="track-panel__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-notebook-pen" viewBox="0 0 24 24"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4M2 6h4M2 10h4M2 14h4M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
+          <h3 class="track-panel__title">Learning in the Open</h3>
+        </div>
+        <div class="track-panel__meta">
+          <span>Codelogium</span>
+          <span class="track-panel__count">Ongoing</span>
+        </div>
+        <ul class="track-panel__list">
+          <li class="is-done">C and how computers actually work</li>
+          <li class="is-done">Algorithms and data structures</li>
+          <li class="is-done">Notes from K&amp;R and CS50</li>
+          <li class="is-done">Git and tooling in the Lab</li>
+        </ul>
+        <a class="home-btn track-panel__btn" href="/cs-fundamentals/">Read the notes</a>
+      </div>
+    </div>
     <p>I'm also a <a href="https://www.credly.com/badges/550ad245-d58e-4984-b239-60931322c443" target="_blank" rel="noopener">Claude Certified Associate (Foundations)</a> by <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>, and I'm working toward the Developer certification next.</p>
 
     <span class="home-eyebrow">Away from the keyboard</span>
     <p>When I'm not learning about CS, I'm at the gym, in the forest, swimming, or anywhere out in nature. I love exploring new places and exchanging ideas with like-minded people.</p>
     <p>That's usually where you'll find me, just like in the photo: visiting the Imlil waterfall, seconds before the slippery rocks almost had me slipping straight into the water.</p>
+    <p>I also love the English language: I speak it every day, can hardly go a day without it, and I've taught it a few times in the past. Besides English, I speak French, Darija (Moroccan Arabic) and, of course, my native Shikomori (Comorian), a Bantu language closely related to Swahili.</p>
     <p>I'm also a die-hard fan of traditional food, from home and from other cultures:</p>
     <ul class="about__dishes">
       <li><img class="about__flag" src="/assets/flags/km.svg" alt="" width="23" height="14"> <strong>Comoros:</strong> pilau, couscouma, madaba, samboussa, futra, mhogo…</li>
