@@ -5,6 +5,8 @@ title: "TITLE"
 date: DATE
 categories:
   - Category
+tags:
+  - Tag
 description: "One or two sentences that sum up the post. Shown under the title and in search results."
 ---
 

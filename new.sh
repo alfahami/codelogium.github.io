@@ -31,11 +31,27 @@ sed -e "s/TITLE/$escaped/g" -e "s/DATE/$(date +%Y-%m-%d)/" "$template" > "$file"
 echo "Created $file"
 echo
 echo "Next:"
-echo "  1. Fill in the front matter (categories, description, icon) and write."
+echo "  1. Fill in the front matter (description, categories, tags, icon) and write."
 case "$kind" in
-  article) echo "  2. Add a card for it in $dir/index.md (see templates/README.md)." ;;
-  project) echo "  2. Add a card for it in docs/projects/index.md (see templates/README.md)." ;;
-  blog)    echo "  2. Nothing else: the blog page lists it automatically." ;;
+  article) where="$dir/index.md (and docs/languages/index.md for a language)"; label="Read article" ;;
+  project) where="docs/projects/index.md and docs/projects/$2/index.md"; label="View project" ;;
 esac
+if [ "$kind" = blog ]; then
+  echo "  2. Nothing else: the blog page lists it automatically."
+else
+  echo "  2. Paste this card into the grid in $where,"
+  echo "     with the same icon and a one-line description:"
+  echo
+  echo "-   :lucide-file-text:{ .lg .middle } __${title}__"
+  echo
+  echo "    ---"
+  echo
+  echo "    One line on what it covers."
+  echo
+  echo "    ---"
+  echo
+  echo "    [$label :lucide-arrow-right:]($slug/)"
+  echo
+fi
 [ "$kind" = blog ] || echo "  3. When done writing: ./new.sh readtime $file"
 echo "  Preview: venv/bin/zensical serve"

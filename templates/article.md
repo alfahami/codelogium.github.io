@@ -6,6 +6,8 @@ categories:
 description: "One or two sentences: what the reader learns. Shown under the title and in search results."
 reading_time: 5
 icon: lucide/file-text   # sidebar icon, pick one at https://lucide.dev/icons
+tags:                    # search filters; reuse existing tags (see templates/README.md)
+  - Tag
 ---
 
 <!--

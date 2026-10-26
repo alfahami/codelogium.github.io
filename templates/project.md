@@ -11,6 +11,8 @@ stack:
   - Framework
   - Database
 icon: lucide/file-text   # sidebar icon, pick one at https://lucide.dev/icons
+tags:                    # search filters; reuse existing tags (see templates/README.md)
+  - Tag
 ---
 
 <!--

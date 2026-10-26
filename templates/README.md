@@ -23,7 +23,7 @@ From the repo root:
 ./new.sh project java "Banking App"           # -> docs/projects/java/banking-app.md
 ```
 
-The title and today's date are filled in. Then fill in `categories`, `description` and `icon`,
+The title and today's date are filled in. Then fill in `description`, `categories`, `tags` and `icon`,
 delete the HTML comment, and write.
 
 **Titles:** keep them to about 20 characters so they fit on one line in the sidebar
@@ -39,7 +39,8 @@ the title, since it's also the Google result title.
 | `categories` | yes | yes | yes | Pills in the header; blog categories also group posts |
 | `description` | yes | yes | yes | Text under the title and in search results |
 | `reading_time` | yes | no | yes | Minutes; set it with `./new.sh readtime`. Blog posts get it calculated |
-| `icon` | yes | no | yes | Sidebar icon, e.g. `lucide/terminal` (names at https://lucide.dev/icons) |
+| `icon` | yes | no | yes | Sidebar icon, e.g. `lucide/terminal` (names at https://lucide.dev/icons). Pages only: section and group `index.md` pages get none |
+| `tags` | yes | yes | yes | Search filters. Reuse the existing set: Git, Tooling, Debugging, Java, Spring, Microservices, Blockchain, MkDocs; add C, CS50, K&R once those notes exist |
 | `repo`, `stack` | | | yes | GitHub button and stack pills |
 | `demo`, `year` | | | optional | "Live demo" button; overrides the year |
 | `cover`, `cover_alt`, `cover_focus` | optional | optional | optional | Wide photo at the top of the header |
@@ -75,35 +76,68 @@ Write a real alt text in place of `Alt text`: it's what screen readers and Googl
 ## 4. Add a card (articles and projects only)
 
 Blog posts appear on the blog page by themselves. Articles and projects need a card on their
-section page.
+section page; `new.sh` prints it ready to paste. Cards use Zensical's grid cards, inside the
+section's grid:
 
-**Articles**, in the section's `index.md` (for example `docs/java/index.md`), inside
-`<div class="project-grid">`:
+```markdown
+-   :lucide-braces:{ .lg .middle } __Java Generics__
 
-```html
-<a class="project-card" href="java-streams/">
-  <div class="project-card__body">
-    <h3 class="project-card__title">Java Streams</h3>
-    <p class="project-card__desc">Two or three sentences on what the article covers.</p>
-  </div>
-  <div class="project-card__footer">
-    <span class="project-card__cta">Read article &rsaquo;</span>
-  </div>
-</a>
+    ---
+
+    How generics work across interfaces, classes and multi-type scenarios, with real examples.
+
+    ---
+
+    [Read article :lucide-arrow-right:](generic-types/)
 ```
 
-Java articles also get the same card on `docs/languages/index.md` (with `href="/java/java-streams/"`).
+- Use the page's own `icon` so the card and the sidebar match.
+- Keep the description to one or two lines (about 120–160 characters).
+- The link text is `Read article` for notes and `View project` for projects.
 
-**Projects**, in `docs/projects/index.md`, inside the right group's `<div class="project-grid">`:
-the same card with `href="java/banking-app/"` and `View project &rsaquo;` as the link text.
+Where they go:
+
+| Page | Card goes in | Notes |
+|---|---|---|
+| Java article | `docs/java/index.md` and `docs/languages/index.md` | Languages links with `/java/<slug>/` |
+| Lab guide | `docs/lab/index.md` | its own section page lists its pages too, like `docs/lab/git/index.md` |
+| Project | `docs/projects/index.md` (right group) and `docs/projects/<group>/index.md` | href `<group>/<slug>/` on the Projects page |
+
+The accent color comes from the wrapper the cards sit in, so a new card picks it up by itself.
+For a new grid, wrap it like this (pick the class for the section: `--lang`, `--lab`, `--c`,
+`--cs`; on the Projects page each group's `id` sets its color):
+
+```html
+<div class="project-sections project-sections--lang" data-search-exclude markdown>
+
+<div class="grid cards" markdown>
+
+...cards...
+
+</div>
+
+</div>
+```
 
 **Home page (optional):** to feature something under "Latest notes", copy one of the
 `home-mini-card` blocks in `docs/index.md` and change the link, kicker, title and text.
 
+### Track progress (C and CS Fundamentals)
+
+The K&R, Beej's, CS50 and Teach Yourself CS panels in `docs/c/index.md` and
+`docs/cs-fundamentals/index.md` are checklists:
+
+- Finished item: `<li class="is-done">Arrays</li>` (filled check)
+- Current item: `<li class="is-current">Algorithms</li>` (half circle, bold)
+- Update the counter in the meta line, e.g. `3 / 10 weeks`.
+- The panel you're currently working on has `track-panel--featured` (the moving border light).
+- When a notes page exists, replace the "coming soon" placeholder with the button in the HTML
+  comment just above it.
+
 ## 5. A new section
 
 If the article starts a new section (say `docs/python/`), the section also needs an `index.md`
-(copy `docs/java/index.md` and change the hero text and `icon`) and a line in `docs/.nav.yml` to
+(copy `docs/java/index.md` and change the hero text; section pages have no `icon`) and a line in `docs/.nav.yml` to
 show it in the top navigation.
 
 ## 6. Preview and publish

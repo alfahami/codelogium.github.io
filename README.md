@@ -103,8 +103,12 @@ Rules that keep pages fast and clean:
 - **Articles and projects have no `# Title` line**: the header is generated from the front matter.
   Blog posts keep it.
 - **Short titles** (about 20 characters, keyword first), details in `description`.
-- **An `icon:`** for the sidebar (names at [lucide.dev/icons](https://lucide.dev/icons)).
-- **A card** on the section page for articles and projects; blog posts list themselves.
+- **An `icon:`** on article and project pages only (names at [lucide.dev/icons](https://lucide.dev/icons));
+  section and group pages stay plain.
+- **`tags:`** from the existing set, for the search filters.
+- **A card** on the section page for articles and projects (`new.sh` prints it); blog posts list
+  themselves.
+- **Track progress** on C and CS Fundamentals: `is-done` / `is-current` on the list items.
 
 [`templates/README.md`](templates/README.md) has the front matter reference, the card snippets,
 image rules and how to add a new section.
