@@ -90,6 +90,7 @@ Everything for new pages is in [`templates/`](templates/README.md). The short ve
 ./new.sh article java "Java Streams"                          # or: blog "Title", project <group> "Title"
 ./new.sh img ~/Downloads/streams-flow.png java/java-streams    # screenshots; `photo` for photos and covers
 ./new.sh readtime docs/java/java-streams.md                    # articles and projects
+./new.sh cs50 1 "Talking to the Machine" ~/Documents/notes-images   # CS50 week + notes deck + sidebar
 venv/bin/zensical serve                                        # check light, dark and a narrow window
 ```
 

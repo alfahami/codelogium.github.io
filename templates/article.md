@@ -16,6 +16,10 @@ tags:                    # search filters; reuse existing tags (see templates/RE
     cover: assets/posts/my-image.webp   # wide photo across the top of the header
     cover_alt: "What the photo shows"
     cover_focus: center 60%              # which part of the photo shows in the band
+    notes:                               # handwritten notes deck in the header's corner
+      path: assets/cs50/week0            # made by ./new.sh notes <photos-dir> cs50/week0
+      pages:                             # one short caption per photo (alt text)
+        - "What page 1 covers"
 -->
 
 > "A one-line hook or quote that sets up the article."

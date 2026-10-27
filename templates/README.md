@@ -26,6 +26,20 @@ From the repo root:
 The title and today's date are filled in. Then fill in `description`, `categories`, `tags` and `icon`,
 delete the HTML comment, and write.
 
+**CS50 weeks** have their own command, which also converts your notebook photos and adds the
+week to the sidebar (CS Fundamentals > CS50 > Week N):
+
+```bash
+./new.sh cs50 1 "Talking to the Machine" ~/Documents/notes-images
+# -> docs/cs-fundamentals/cs50/week-1.md, titled "CS50 Week 1: Talking to the Machine"
+# -> docs/assets/cs50/week1/page-N.webp (+ thumbnails), in photo name order
+# -> "Week 1" line in docs/.nav.yml
+```
+
+Leave out the photos folder for a week without notes. Then give each notes page a short caption
+under `notes: pages:` (it's the photo's alt text). Write your own angle, not a retelling of the
+lecture: link the official notes for the full walkthrough, and never post problem set code.
+
 **Titles:** keep them to about 20 characters so they fit on one line in the sidebar
 ("Daily Commands", "Java Generics"). The detail goes in `description`. Keep the main keyword in
 the title, since it's also the Google result title.
@@ -72,6 +86,18 @@ The printed line looks like this; the width and height let the browser reserve t
 ```
 
 Write a real alt text in place of `Alt text`: it's what screen readers and Google see.
+
+### Handwritten notes deck
+
+Any article can show a small stack of notebook photos in the corner of its header that opens a
+page viewer. Convert the photos, then paste the printed `notes:` block into the front matter:
+
+```bash
+./new.sh notes ~/Documents/notes-images cs50/week0   # HEIC, JPG or PNG, taken in name order
+```
+
+Photos are saved as `page-N.webp` (1200px) and `page-N-thumb.webp` (for the stack). The full pages
+only load when someone opens the deck.
 
 ## 4. Add a card (articles and projects only)
 
@@ -133,6 +159,9 @@ The K&R, Beej's, CS50 and Teach Yourself CS panels in `docs/c/index.md` and
 - The panel you're currently working on has `track-panel--featured` (the moving border light).
 - When a notes page exists, replace the "coming soon" placeholder with the button in the HTML
   comment just above it.
+- CS50: link each finished week's item to its page
+  (`<li class="is-done"><a href="/cs-fundamentals/cs50/week-1/">C</a></li>`) and point the
+  "Latest notes · Week N" button at the newest week. `./new.sh cs50` prints both lines.
 
 ## 5. A new section
 

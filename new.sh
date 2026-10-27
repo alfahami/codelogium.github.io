@@ -3,20 +3,22 @@
 #   ./new.sh article <section> "Title"    e.g. ./new.sh article java "Java Streams"
 #   ./new.sh blog "Title"                 e.g. ./new.sh blog "My Claude Certification"
 #   ./new.sh project <group> "Title"      e.g. ./new.sh project java "Banking App"
+#   ./new.sh cs50 <week> "Angle" [photos] e.g. ./new.sh cs50 1 "Talking to the Machine" ~/Documents/notes-images
+#   ./new.sh notes <photos-dir> <assets>  e.g. ./new.sh notes ~/Documents/notes-images cs50/week1
 #   ./new.sh img <file> <assets-dir>      e.g. ./new.sh img ~/Downloads/shot.png projects/banking-app
 #   ./new.sh photo <file> <assets-dir>    e.g. ./new.sh photo ~/Downloads/cover.jpg posts
 #   ./new.sh readtime <page.md>           e.g. ./new.sh readtime docs/java/java-streams.md
 set -euo pipefail
 cd "$(dirname "$0")"
 
-usage() { sed -n '2,8p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
+usage() { sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
 
 kind="${1:-}"
 case "$kind" in
   article) [ $# -eq 3 ] || usage; dir="docs/$2"; title="$3"; template="templates/article.md" ;;
   blog)    [ $# -eq 2 ] || usage; dir="docs/blog/posts"; title="$2"; template="templates/blog-post.md" ;;
   project) [ $# -eq 3 ] || usage; dir="docs/projects/$2"; title="$3"; template="templates/project.md" ;;
-  img|photo|readtime) exec python3 templates/tools.py "$@" ;;
+  img|photo|notes|cs50|readtime) exec python3 templates/tools.py "$@" ;;
   *) usage ;;
 esac
 
