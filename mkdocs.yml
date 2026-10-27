@@ -71,6 +71,9 @@ extra:
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/al_fahami
       name: alfahami on X
+    - icon: lucide/rss
+      link: /feed_rss_created.xml
+      name: RSS feed
   # Cloudflare Web Analytics is also loaded, in overrides/main.html
   analytics:
     provider: google
@@ -104,6 +107,18 @@ plugins:
   - blog:
       authors: true
   - tags
+  # RSS and JSON feeds of notes, projects and blog posts. Section index pages are left out (the
+  # regex engine has no look-ahead, hence the spelled-out "file name isn't index" part).
+  - rss:
+      match_path: '^(blog/posts|lab|java|c|cs-fundamentals|projects)/(.+/)?([^i/][^/]*|i[^n/][^/]*|in[^d/][^/]*|ind[^e/][^/]*|inde[^x/][^/]*|index[^/.][^/]*)\.md$'
+      date_from_meta:
+        as_creation: date
+      categories:
+        - tags
+      feed_title: Codelogium
+      # No XSLT styling: Chrome is removing XSLT and warns on styled feeds; readers ignore it anyway
+      stylesheet: ""
+      image: https://codelogium.com/assets/home-share.jpg
   # - social: can be installed later preferably in a linux machine
   - social:
       enabled: !ENV [CI, false]

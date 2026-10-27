@@ -1,9 +1,13 @@
 mkdocs-material/
 venv/
-.vscode/
 categories/
 site/
-.cache
 mkdocs.yml
 settings.json
-.claude/
+
+# Everything starting with a dot (files and folders), except the ones the site needs
+.*
+!.gitignore
+!.github/
+!docs/.nav.yml
+!docs/blog/.authors.yml

@@ -60,6 +60,7 @@ const FOOTER_COLUMNS = [
       { label: "Beej's Guide to C", href: 'https://beej.us/guide/bgc/html/split-wide/' },
       { label: 'C Programming: A Modern Approach', href: 'http://knking.com/books/c2/' },
       { label: 'Robert C. Seacord', href: 'https://clark.center/users/Rcseacord' },
+      { label: 'C reference (cppreference)', href: 'https://en.cppreference.com/c' },
     ],
   },
   {
@@ -68,6 +69,8 @@ const FOOTER_COLUMNS = [
       { label: 'CS Primer', href: 'https://csprimer.com/courses/' },
       { label: 'Teach Yourself CS', href: 'https://teachyourselfcs.com/' },
       { label: 'CS50 on edX', href: 'https://www.edx.org/cs50' },
+      { label: 'Martin Fowler', href: 'https://martinfowler.com/' },
+      { label: 'SICP (MIT Press, free online)', href: 'https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html' },
     ],
   },
   {
@@ -283,4 +286,38 @@ function initHeroCanvas(canvas) {
   window.addEventListener('resize', onResize);
   resize();
   start();
+}
+
+// Notes deck: the card opens a full-screen viewer; pages swipe (scroll-snap) or step with the buttons and arrow keys.
+document.addEventListener('click', e => {
+  const card = e.target.closest('.notes-deck__card');
+  if (card) {
+    const viewer = card.parentElement.querySelector('.notes-deck__viewer');
+    viewer.querySelectorAll('img').forEach(img => img.loading = 'eager');
+    viewer.showModal();
+    return;
+  }
+
+  const btn = e.target.closest('[data-deck]');
+  const viewer = e.target.closest('.notes-deck__viewer');
+  if (!viewer) return;
+  if (btn?.dataset.deck === 'close' || e.target === viewer) return viewer.close();
+  if (btn) stepDeck(viewer, btn.dataset.deck === 'next' ? 1 : -1);
+});
+
+document.addEventListener('keydown', e => {
+  const viewer = document.querySelector('.notes-deck__viewer[open]');
+  if (viewer && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) stepDeck(viewer, e.key === 'ArrowRight' ? 1 : -1);
+});
+
+document.addEventListener('scroll', e => {
+  if (!e.target.classList?.contains('notes-deck__pages')) return;
+  const pages = e.target;
+  const index = Math.round(pages.scrollLeft / pages.clientWidth);
+  pages.closest('.notes-deck__viewer').querySelector('.notes-deck__count').textContent = `${index + 1} / ${pages.children.length}`;
+}, true);
+
+function stepDeck(viewer, delta) {
+  const pages = viewer.querySelector('.notes-deck__pages');
+  pages.scrollBy({ left: delta * pages.clientWidth, behavior: 'smooth' });
 }

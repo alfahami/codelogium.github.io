@@ -18,6 +18,12 @@
 
 {#- Cloudflare Web Analytics alongside Google Analytics -#}
 {% block analytics %}
+  {#- No Google Analytics on the local preview (zensical serve), so test visits aren't counted -#}
+  <script>
+    if (["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
+      window["ga-disable-{{ config.extra.analytics.property }}"] = true;
+    }
+  </script>
   {{ super() }}
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0589850466a440b2a08595cc8deb4b25"}'></script>
 {% endblock %}
@@ -25,6 +31,9 @@
 {#- Structured data (schema.org) on the home and About pages: who runs the site -#}
 {% block extrahead %}
   {#- The only font request: theme font loading is off in mkdocs.yml (font: false) -#}
+  {#- Feeds, so readers and browsers find them from any page -#}
+  <link rel="alternate" type="application/rss+xml" title="Codelogium: latest" href="{{ config.site_url }}feed_rss_created.xml">
+  <link rel="alternate" type="application/rss+xml" title="Codelogium: updated" href="{{ config.site_url }}feed_rss_updated.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap">

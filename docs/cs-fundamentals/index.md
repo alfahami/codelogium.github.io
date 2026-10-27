@@ -24,7 +24,7 @@ hide:
       <span class="track-panel__count">3 / 10 weeks</span>
     </div>
     <ul class="track-panel__list">
-      <li class="is-done">Scratch</li>
+      <li class="is-done"><a href="/cs-fundamentals/cs50/week-0/">Scratch</a></li>
       <li class="is-done">C</li>
       <li class="is-done">Arrays</li>
       <li class="is-current">Algorithms</li>
@@ -40,8 +40,7 @@ hide:
         <li>Flask</li>
       </ul>
     </details>
-    <!-- When the notes page exists: <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/">Notes &amp; exercises</a> -->
-    <span class="track-panel__btn track-panel__btn--soon">Notes &amp; exercises · coming soon</span>
+    <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-0/">Latest notes · Week 0</a>
   </div>
   <div class="track-panel">
     <div class="track-panel__head">
