@@ -1,6 +1,6 @@
 ---
 title: "CS50 Week 1: Talking to the Machine"
-date: 2026-11-02
+date: 2026-11-03
 categories:
   - CS Fundamentals
 description: "My notes from CS50 Week 1: how source code becomes machine code, why reading the docs is a skill, and the building blocks of C: variables, conditionals, loops and functions."
