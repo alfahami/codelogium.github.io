@@ -1,4 +1,4 @@
-"""Helpers behind ./new.sh img|photo|notes|readtime. Needs Pillow for images (pip install pillow)."""
+"""Helpers behind ./new.sh img|photo|notes|cs50|readtime|share. Needs Pillow for images (pip install pillow)."""
 import math
 import datetime
 import re
@@ -115,7 +115,142 @@ Next:
      - link the week's topic:   <li class="is-done"><a href="{url}">Topic</a></li>
      - point the button here:   <a class="home-btn track-panel__btn" href="{url}">Latest notes · Week {week}</a>
   3. When done writing: ./new.sh readtime {page.relative_to(ROOT)}
+  4. Link preview:       ./new.sh share {page.relative_to(ROOT)}
   Preview: venv/bin/zensical serve""")
+
+
+FONTS = {  # the site's fonts, from Google Fonts; downloaded once into ~/.cache/codelogium-fonts
+    "SpaceGrotesk": "spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf",
+    "Inter": "inter/Inter%5Bopsz,wght%5D.ttf",
+    "JetBrainsMono": "jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
+}
+
+
+def font(name, size, weight):
+    from PIL import ImageFont
+    import urllib.request
+
+    path = Path.home() / ".cache" / "codelogium-fonts" / f"{name}.ttf"
+    if not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        urllib.request.urlretrieve("https://raw.githubusercontent.com/google/fonts/main/ofl/" + FONTS[name], path)
+    f = ImageFont.truetype(str(path), size)
+    f.set_variation_by_name(weight)
+    return f
+
+
+def wrap(draw, text, fnt, width):
+    """Split text into lines that fit width pixels."""
+    lines, line = [], ""
+    for word in text.split():
+        trial = f"{line} {word}".strip()
+        if line and draw.textlength(trial, font=fnt) > width:
+            lines.append(line)
+            line = word
+        else:
+            line = trial
+    return lines + [line] if line else lines
+
+
+def share(page):
+    """Draw the link preview (1200x630 share.jpg) for a page with a notes deck and set share_image.
+
+    Title, category and description come from the front matter; the lead under the title is
+    `share_lead` if set, else the description after its colon, cut to two lines at a comma.
+    """
+    from PIL import Image, ImageDraw, ImageFilter
+
+    path = Path(page)
+    text = path.read_text()
+    m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+    if not m:
+        sys.exit(f"No front matter in {page}")
+    front = m.group(1)
+
+    def field(key):
+        f = re.search(rf'^{key}:\s*"?(.*?)"?\s*$', front, re.M)
+        return f.group(1) if f else None
+
+    title, notes_path = field("title"), re.search(r"^notes:\n\s+path:\s*(\S+)", front, re.M)
+    if not title or not notes_path:
+        sys.exit(f"{page} needs a title and a notes: path")
+    assets = ROOT / "docs" / notes_path.group(1)
+    category = (re.search(r"^categories:\n\s+-\s*(.+)$", front, re.M) or [None, "Codelogium"])[1].strip()
+
+    W, H = 1200, 630
+    green, grey, dim = (52, 211, 153), (160, 168, 180), (120, 128, 140)
+    im = Image.new("RGB", (W, H), (17, 22, 29))
+    d = ImageDraw.Draw(im)
+    f_title, f_brand = font("SpaceGrotesk", 70, "Bold"), font("SpaceGrotesk", 30, "Bold")
+    f_lead, f_eye = font("Inter", 26, "Regular"), font("JetBrainsMono", 21, "Bold")
+    f_url, f_lab = font("JetBrainsMono", 20, "Regular"), font("JetBrainsMono", 16, "Bold")
+
+    d.rectangle([0, 0, W, 8], fill=(14, 122, 96))
+    d.text((70, 70), "Codelogium", font=f_brand, fill=(255, 255, 255))
+    d.text((70, 152), category.upper(), font=f_eye, fill=green)
+
+    # "CS50 Week 1:" on its own line, then the angle wrapped
+    head, _, rest = title.partition(": ")
+    title_lines = [head + ":"] + wrap(d, rest, f_title, 700) if rest else wrap(d, title, f_title, 700)
+    y = 192
+    for line in title_lines[:3]:
+        d.text((70, y), line, font=f_title, fill=(255, 255, 255))
+        y += 80
+
+    lead = field("share_lead")
+    if not lead:
+        desc = field("description") or ""
+        lead = desc.split(": ", 1)[-1]
+        lines = wrap(d, lead, f_lead, 640)
+        if len(lines) > 2:  # too long: stop at the last comma that fits in two lines
+            cut = " ".join(lines[:2])
+            lead = cut[: cut.rfind(",")] + "." if "," in cut else cut
+        lead = lead[0].upper() + lead[1:]
+    y += 16
+    for line in wrap(d, lead, f_lead, 640)[:2]:
+        d.text((70, y), line, font=f_lead, fill=grey)
+        y += 36
+    d.text((70, H - 70), "codelogium.com", font=f_url, fill=dim)
+
+    # Three notebook pages fanned out, like the hero deck
+    cx, cy, pw, ph = 960, 330, 250, 333
+    for i, ang, dx, dy in [(3, 11, 55, 10), (2, -9, -55, 10), (1, 1, 0, 0)]:
+        if not (assets / f"page-{i}.webp").exists():
+            continue
+        p = Image.open(assets / f"page-{i}.webp").convert("RGB")
+        p = p.resize((pw, round(p.height * pw / p.width))).crop((0, 0, pw, ph))
+        card = Image.new("RGBA", (pw + 12, ph + 12), (255, 255, 255, 255))
+        card.paste(p, (6, 6))
+        sh = Image.new("RGBA", (pw + 60, ph + 60), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rectangle([30, 36, pw + 42, ph + 48], fill=(0, 0, 0, 150))
+        sh = sh.filter(ImageFilter.GaussianBlur(14)).rotate(ang, expand=True, resample=Image.BICUBIC)
+        r = card.rotate(ang, expand=True, resample=Image.BICUBIC)
+        im.paste(sh, (cx + dx - sh.width // 2, cy + dy - sh.height // 2), sh)
+        im.paste(r, (cx + dx - r.width // 2, cy + dy - r.height // 2), r)
+
+    # Expand badge (two diagonal arrows) and label
+    d = ImageDraw.Draw(im)
+    bx, by, dk = cx + 118, cy - 178, (11, 26, 20)
+    d.ellipse([bx - 28, by - 28, bx + 28, by + 28], fill=green)
+    for s in (1, -1):
+        d.line([bx, by, bx + 11 * s, by - 11 * s], fill=dk, width=4)
+        d.line([bx + 11 * s, by - 11 * s, bx + 3 * s, by - 11 * s], fill=dk, width=4)
+        d.line([bx + 11 * s, by - 11 * s, bx + 11 * s, by - 3 * s], fill=dk, width=4)
+    d.text((cx, cy + 225), "MY HANDWRITTEN NOTES", font=f_lab, fill=grey, anchor="mm")
+
+    out = assets / "share.jpg"
+    im.save(out, quality=88, optimize=True)
+    print(f"Saved {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
+
+    # Point the link preview at it (instead of the generated social card)
+    if not re.search(r"^share_image:", front, re.M):
+        rel = out.relative_to(ROOT / "docs").as_posix()
+        block = (f"share_image: {rel}   # link preview (LinkedIn, X, WhatsApp) instead of the generated card\n"
+                 f'share_image_alt: "{title}, with a stack of handwritten notebook pages"\n'
+                 "social:\n  cards: false")
+        front = re.sub(r"^notes:", block + "\nnotes:", front, count=1, flags=re.M)
+        path.write_text(f"---\n{front}\n---\n" + text[m.end():])
+        print(f"Set share_image in {page}")
 
 
 def readtime(page):
@@ -140,7 +275,7 @@ def readtime(page):
 
 def main():
     args = sys.argv[1:]
-    usage = "./new.sh img|photo <file> <assets-dir>  or  ./new.sh notes <photos-dir> <assets-dir>  or  ./new.sh readtime <page.md>"
+    usage = "./new.sh img|photo <file> <assets-dir>  or  ./new.sh notes <photos-dir> <assets-dir>  or  ./new.sh readtime|share <page.md>"
     if len(args) == 3 and args[0] in ("img", "photo"):
         convert(args[1], args[2], photo=args[0] == "photo")
     elif len(args) == 3 and args[0] == "notes":
@@ -153,6 +288,8 @@ def main():
         cs50_week(args[1], args[2], args[3] if len(args) == 4 else None)
     elif len(args) == 2 and args[0] == "readtime":
         readtime(args[1])
+    elif len(args) == 2 and args[0] == "share":
+        share(args[1])
     else:
         sys.exit(usage)
 

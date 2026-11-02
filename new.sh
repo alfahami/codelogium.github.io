@@ -8,17 +8,18 @@
 #   ./new.sh img <file> <assets-dir>      e.g. ./new.sh img ~/Downloads/shot.png projects/banking-app
 #   ./new.sh photo <file> <assets-dir>    e.g. ./new.sh photo ~/Downloads/cover.jpg posts
 #   ./new.sh readtime <page.md>           e.g. ./new.sh readtime docs/java/java-streams.md
+#   ./new.sh share <page.md>              e.g. ./new.sh share docs/cs-fundamentals/cs50/week-1.md
 set -euo pipefail
 cd "$(dirname "$0")"
 
-usage() { sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
+usage() { sed -n '2,11p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
 
 kind="${1:-}"
 case "$kind" in
   article) [ $# -eq 3 ] || usage; dir="docs/$2"; title="$3"; template="templates/article.md" ;;
   blog)    [ $# -eq 2 ] || usage; dir="docs/blog/posts"; title="$2"; template="templates/blog-post.md" ;;
   project) [ $# -eq 3 ] || usage; dir="docs/projects/$2"; title="$3"; template="templates/project.md" ;;
-  img|photo|notes|cs50|readtime) exec python3 templates/tools.py "$@" ;;
+  img|photo|notes|cs50|readtime|share) exec python3 templates/tools.py "$@" ;;
   *) usage ;;
 esac
 

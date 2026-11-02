@@ -9,6 +9,11 @@ icon: lucide/graduation-cap
 tags:
   - CS50
   - C
+share_image: assets/cs50/week1/share.jpg   # link preview (LinkedIn, X, WhatsApp) instead of the generated card
+share_lead: "How source code becomes machine code, and the building blocks of C."
+share_image_alt: "CS50 Week 1: Talking to the Machine, with a stack of handwritten notebook pages"
+social:
+  cards: false
 notes:
   path: assets/cs50/week1
   pages:
