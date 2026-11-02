@@ -97,15 +97,15 @@ The course runs on **Linux**, an operating system, the software that handles the
 ```c
 if (x < y)
 {
-    printf("x is less than y\n");
+    printf("Codelogium sucks.\n");
 }
 else if (x > y)
 {
-    printf("x is greater than y\n");
+    printf("Nah! Codelogium can be better, with a bunch of mistakes.\n");
 }
 else
 {
-    printf("x is equal to y\n");
+    printf("Codelogium is just right.\n");
 }
 ```
 
