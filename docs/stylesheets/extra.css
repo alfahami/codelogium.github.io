@@ -1254,6 +1254,61 @@ body:has(.article-hero) .md-content .md-typeset blockquote::before {
   border-top: 1px solid var(--card-line);
 }
 
+/* Share row at the end of the article, above the author card; .is-native (phones with a share sheet) shows one button instead */
+.md-typeset .article-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-top: 2.5rem;
+}
+
+.md-typeset .article-share .home-eyebrow { margin: 0 0.4rem 0 0; }
+
+/* The share row takes the place of the footer's top gap, so the page doesn't get longer */
+.md-typeset .article-share + .article-end { margin-top: 1rem; }
+
+.md-typeset .article-share a,
+.md-typeset .article-share button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  padding: 0 0.4rem;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  background: var(--card-bg);
+  border: 1px solid var(--card-line);
+  border-radius: 6px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.md-typeset .article-share a:hover,
+.md-typeset .article-share button:hover {
+  color: var(--md-accent-fg-color);
+  border-color: currentColor;
+}
+
+.md-typeset .article-share svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: currentColor;
+}
+
+/* Lucide icons are stroked, the brand icons filled */
+.md-typeset .article-share button svg { fill: none; }
+
+.md-typeset .article-share__native[hidden] { display: none; }
+.md-typeset .article-share.is-native > :not(.home-eyebrow, .article-share__native) { display: none; }
+.md-typeset .article-share.is-native .article-share__native[hidden] { display: inline-flex; }
+
 .md-typeset .article-author {
   display: grid;
   grid-template-columns: 4.5rem 1fr;
@@ -2553,3 +2608,7 @@ body:has(#hero-title) .md-content__inner {
   .md-typeset .notes-deck--hero .notes-deck__label { display: none; }
   .md-typeset .notes-deck--hero .notes-deck__expand { width: 1rem; height: 1rem; }
 }
+
+/* A single highlighted bit in a binary example (e.g. the bit worth 32 between H and h) */
+.md-typeset .bit-flip { color: #DC2626; font-weight: 700; }
+[data-md-color-scheme="slate"] .md-typeset .bit-flip { color: #F87171; }

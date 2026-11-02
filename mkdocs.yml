@@ -125,4 +125,4 @@ plugins:
       cards_layout_options:
         background_color: "#0E7A60"
         color: "#FFFFFF"
-        font_family: Inter
+        font_family: Space Grotesk

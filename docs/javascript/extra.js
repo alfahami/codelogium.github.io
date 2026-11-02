@@ -321,3 +321,33 @@ function stepDeck(viewer, delta) {
   const pages = viewer.querySelector('.notes-deck__pages');
   pages.scrollBy({ left: delta * pages.clientWidth, behavior: 'smooth' });
 }
+
+// Share row: phones with a native share sheet get one "Share" button; everyone else copies the link.
+document.addEventListener('DOMContentLoaded', () => {
+  const share = document.querySelector('.article-share');
+  if (share && navigator.share && matchMedia('(pointer: coarse)').matches) share.classList.add('is-native');
+});
+
+document.addEventListener('click', async e => {
+  const native = e.target.closest('.article-share__native');
+  if (native) {
+    navigator.share({ title: document.querySelector('.article-hero__title')?.textContent, url: location.href }).catch(() => {});
+    return;
+  }
+
+  const copy = e.target.closest('.article-share__copy');
+  if (!copy) return;
+  try {
+    await navigator.clipboard.writeText(location.href);
+  } catch {
+    // Older browsers or no clipboard permission: copy through a hidden field
+    const field = Object.assign(document.createElement('textarea'), { value: location.href });
+    document.body.append(field);
+    field.select();
+    document.execCommand('copy');
+    field.remove();
+  }
+  const label = copy.querySelector('span');
+  label.textContent = 'Copied ✓';
+  setTimeout(() => { label.textContent = 'Copy link'; }, 1800);
+});
