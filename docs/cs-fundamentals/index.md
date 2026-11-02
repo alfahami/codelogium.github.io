@@ -25,7 +25,7 @@ hide:
     </div>
     <ul class="track-panel__list">
       <li class="is-done"><a href="/cs-fundamentals/cs50/week-0/">Scratch</a></li>
-      <li class="is-done">C</li>
+      <li class="is-done"><a href="/cs-fundamentals/cs50/week-1/">C</a></li>
       <li class="is-done">Arrays</li>
       <li class="is-current">Algorithms</li>
     </ul>
@@ -40,7 +40,7 @@ hide:
         <li>Flask</li>
       </ul>
     </details>
-    <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-0/">Latest notes · Week 0</a>
+    <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-1/">Latest notes · Week 1</a>
   </div>
   <div class="track-panel">
     <div class="track-panel__head">
