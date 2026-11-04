@@ -73,6 +73,16 @@ hide:
       <li><img class="about__flag" src="/assets/flags/sn.svg" alt="" width="23" height="14"> <strong>Senegal:</strong> thieboudienne (jollof rice), poulet yassa… and plenty more</li>
     </ul>
 
+    <span class="home-eyebrow">Quotes I keep close</span>
+    <blockquote>
+      <p>You can know the name of a bird in all the languages of the world, but when you're finished, you'll know absolutely nothing whatever about the bird… So let's look at the bird and see what it's doing — that's what counts. I learned very early the difference between knowing the name of something and knowing something.</p>
+      <p>— Richard Feynman</p>
+    </blockquote>
+    <blockquote>
+      <p>Seek out that particular mental attribute which makes you feel most deeply and vitally alive, along with which comes the inner voice which says, 'This is the real me', and when you have found that attitude, follow it.</p>
+      <p>— William James</p>
+    </blockquote>
+
     <span class="home-eyebrow">Say hello</span>
     <p>If something here helped you, or you want to talk code, nature or both, reach out.</p>
     <div class="about__links">

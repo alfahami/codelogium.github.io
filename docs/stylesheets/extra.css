@@ -379,7 +379,8 @@ blockquote {
 
 blockquote:before {
   color: #00645A;
-  content: open-quote;
+  /* A fixed curly quote: open-quote without a close-quote nests, so a second quote on the page got a single mark */
+  content: "\201C";
   font-size: 2.5em;
   line-height: 0.1em;
   margin-right: 0.25em;
@@ -1762,6 +1763,13 @@ body:has(.article-hero) .md-content .md-typeset blockquote::before {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+/* The author on its own line, under the quote */
+.md-typeset .about__text blockquote p:last-child {
+  display: block;
+  margin: 0.5em 0 0;
+  text-align: right;
 }
 
 .about__links {
