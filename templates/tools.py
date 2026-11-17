@@ -114,6 +114,7 @@ Next:
   2. In docs/cs-fundamentals/index.md, CS50 panel:
      - link the week's topic:   <li class="is-done"><a href="{url}">Topic</a></li>
      - point the button here:   <a class="home-btn track-panel__btn" href="{url}">Latest notes · Week {week}</a>
+     - bump the counter:        <span class="track-panel__count">{int(week) + 1} / 10 weeks</span>
   3. When done writing: ./new.sh readtime {page.relative_to(ROOT)}
   4. Link preview:       ./new.sh share {page.relative_to(ROOT)}
   Preview: venv/bin/zensical serve""")
