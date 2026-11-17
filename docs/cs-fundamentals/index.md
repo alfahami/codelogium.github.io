@@ -27,12 +27,12 @@ hide:
       <li class="is-done"><a href="/cs-fundamentals/cs50/week-0/">Scratch</a></li>
       <li class="is-done"><a href="/cs-fundamentals/cs50/week-1/">C</a></li>
       <li class="is-done"><a href="/cs-fundamentals/cs50/week-2/">Arrays</a></li>
-      <li class="is-current">Algorithms</li>
+      <li class="is-done"><a href="/cs-fundamentals/cs50/week-3/">Algorithms</a></li>
+      <li class="is-current">Memory</li>
     </ul>
     <details class="track-panel__all">
-      <summary><span class="track-panel__show">Show all 10 weeks <span>(+6)</span></span><span class="track-panel__hide">Show less</span></summary>
+      <summary><span class="track-panel__show">Show all 10 weeks <span>(+5)</span></span><span class="track-panel__hide">Show less</span></summary>
       <ul class="track-panel__list">
-        <li>Memory</li>
         <li>Data Structures</li>
         <li>Python</li>
         <li>SQL</li>
@@ -40,7 +40,7 @@ hide:
         <li>Flask</li>
       </ul>
     </details>
-    <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-2/">Latest notes · Week 2</a>
+    <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-3/">Latest notes · Week 3</a>
   </div>
   <div class="track-panel">
     <div class="track-panel__head">
