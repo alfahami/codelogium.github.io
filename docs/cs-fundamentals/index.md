@@ -21,7 +21,7 @@ hide:
     </div>
     <div class="track-panel__meta">
       <span><a href="https://www.edx.org/cs50" target="_blank" rel="noopener">Course · Harvard on edX</a></span>
-      <span class="track-panel__count">3 / 10 weeks</span>
+      <span class="track-panel__count">4 / 10 weeks</span>
     </div>
     <ul class="track-panel__list">
       <li class="is-done"><a href="/cs-fundamentals/cs50/week-0/">Scratch</a></li>
