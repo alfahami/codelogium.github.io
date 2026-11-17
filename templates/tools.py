@@ -213,8 +213,8 @@ def share(page):
     d.text((70, H - 70), "codelogium.com", font=f_url, fill=dim)
 
     # Three notebook pages fanned out, like the hero deck
-    cx, cy, pw, ph = 960, 320, 190, 253
-    for i, ang, dx, dy in [(3, 11, 42, 8), (2, -9, -42, 8), (1, 1, 0, 0)]:
+    cx, cy, pw, ph = 960, 310, 150, 200
+    for i, ang, dx, dy in [(3, 11, 33, 6), (2, -9, -33, 6), (1, 1, 0, 0)]:
         if not (assets / f"page-{i}.webp").exists():
             continue
         p = Image.open(assets / f"page-{i}.webp").convert("RGB")
@@ -230,13 +230,13 @@ def share(page):
 
     # Expand badge (two diagonal arrows) and label
     d = ImageDraw.Draw(im)
-    bx, by, dk = cx + 90, cy - 136, (11, 26, 20)
-    d.ellipse([bx - 22, by - 22, bx + 22, by + 22], fill=green)
+    bx, by, dk = cx + 71, cy - 108, (11, 26, 20)
+    d.ellipse([bx - 18, by - 18, bx + 18, by + 18], fill=green)
     for s in (1, -1):
-        d.line([bx, by, bx + 8 * s, by - 8 * s], fill=dk, width=4)
-        d.line([bx + 8 * s, by - 8 * s, bx + 2 * s, by - 8 * s], fill=dk, width=4)
-        d.line([bx + 8 * s, by - 8 * s, bx + 8 * s, by - 2 * s], fill=dk, width=4)
-    d.text((cx, cy + 180), "MY HANDWRITTEN NOTES", font=f_lab, fill=grey, anchor="mm")
+        d.line([bx, by, bx + 7 * s, by - 7 * s], fill=dk, width=3)
+        d.line([bx + 7 * s, by - 7 * s, bx + 2 * s, by - 7 * s], fill=dk, width=3)
+        d.line([bx + 7 * s, by - 7 * s, bx + 7 * s, by - 2 * s], fill=dk, width=3)
+    d.text((cx, cy + 145), "MY HANDWRITTEN NOTES", font=f_lab, fill=grey, anchor="mm")
 
     out = assets / "share.jpg"
     im.save(out, quality=88, optimize=True)
