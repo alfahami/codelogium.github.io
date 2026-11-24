@@ -352,3 +352,48 @@ document.addEventListener('click', async e => {
   label.textContent = 'Copied ✓';
   setTimeout(() => { label.textContent = 'Copy link'; }, 1800);
 });
+
+// Home "Latest notes": fill the three cards from the RSS feed, so they never go stale.
+// One card each for the newest CS50 week, blog post and other note; the static cards stay as fallback.
+async function fillLatestNotes() {
+  const box = document.querySelector('.home-latest .home-mini-cards');
+  if (!box) return;
+  let items;
+  try {
+    const xml = await (await fetch('/feed_rss_created.xml')).text();
+    items = [...new DOMParser().parseFromString(xml, 'text/xml').querySelectorAll('item')].map((it) => ({
+      title: it.querySelector('title')?.textContent || '',
+      text: it.querySelector('description')?.textContent || '',
+      path: new URL(it.querySelector('link')?.textContent || '/').pathname,
+      date: new Date(it.querySelector('pubDate')?.textContent || 0),
+    }));
+  } catch { return; }
+  const groups = [
+    { test: (p) => p.startsWith('/cs-fundamentals/'), kicker: 'CS50' },
+    { test: (p) => p.startsWith('/blog/'), kicker: 'Blog' },
+    { test: (p) => /^\/(lab|c|java|projects)\//.test(p), kicker: null },
+  ];
+  const label = { lab: 'Lab', c: 'C', java: 'Java', projects: 'Projects' };
+  const picks = groups.map((g) => {
+    const it = items.filter((i) => g.test(i.path)).sort((a, b) => b.date - a.date)[0];
+    return it && { ...it, kicker: g.kicker || label[it.path.split('/')[1]] };
+  }).filter(Boolean);
+  if (picks.length < 3) return;
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  box.innerHTML = picks.map((p) => {
+    const week = p.path.match(/cs50\/week-(\d+)\//);
+    const title = week ? `CS50 Week ${week[1]}` : p.title;
+    const image = week ? ` style="--card-image: url('/assets/cs50/week${week[1]}/share.jpg'); --card-focus: center"` : '';
+    const date = p.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    return `<a class="home-mini-card" href="${p.path}">
+      <span class="home-mini-card__image"${image} aria-hidden="true"></span>
+      <span class="home-mini-card__body">
+        <span class="home-mini-card__kicker">${p.kicker} · ${date}</span>
+        <span class="home-mini-card__title">${esc(title)}</span>
+        <span class="home-mini-card__text">${esc(p.text)}</span>
+        <span class="home-card__link">Read</span>
+      </span>
+    </a>`;
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded', fillLatestNotes);
