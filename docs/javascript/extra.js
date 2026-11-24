@@ -383,7 +383,12 @@ async function fillLatestNotes() {
   box.innerHTML = picks.map((p) => {
     const week = p.path.match(/cs50\/week-(\d+)\//);
     const title = week ? `CS50 Week ${week[1]}` : p.title;
-    const image = week ? ` style="--card-image: url('/assets/cs50/week${week[1]}/share.jpg'); --card-focus: center"` : '';
+    // Each card gets its own picture: the week's share image, the git photo, or a different crop of the shelf photo
+    const style = week ? `--card-image: url('/assets/cs50/week${week[1]}/share.jpg'); --card-focus: center`
+      : p.path.startsWith('/lab/git/') ? "--card-image: url('/assets/posts/git.webp'); --card-focus: center 70%"
+      : p.path.startsWith('/blog/') ? '--card-pos: 88% 55%; --card-pos-dark: 96% 55%'
+      : '--card-pos: 18% 80%; --card-pos-library: 50% 45%; --card-pos-dark: 45% 25%';
+    const image = ` style="${style}"`;
     const date = p.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
     return `<a class="home-mini-card" href="${p.path}">
       <span class="home-mini-card__image"${image} aria-hidden="true"></span>
