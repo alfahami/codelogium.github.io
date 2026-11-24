@@ -10,7 +10,7 @@ hide:
 <section class="section-hero home-band home-band--dark" data-search-exclude>
   <span class="home-eyebrow">CS Fundamentals</span>
   <h1 class="section-hero__title">CS Fundamentals. <em>The ideas that don't go out of date.</em></h1>
-  <p class="section-hero__lead">How a computer actually runs a program: memory, algorithms, data structures, and the thinking tools that make you faster regardless of the language. Working through CS50 and Teach Yourself CS.</p>
+  <p class="section-hero__lead">How a computer actually runs a program: memory, algorithms, data structures, and the thinking tools that make you faster regardless of the language. Working through CS50, CMU's 15-213 and Teach Yourself CS.</p>
 </section>
 
 <div class="track-panels track-panels--cs" data-search-exclude>
@@ -41,6 +41,31 @@ hide:
       </ul>
     </details>
     <a class="home-btn track-panel__btn" href="/cs-fundamentals/cs50/week-3/">Latest notes · Week 3</a>
+  </div>
+  <div class="track-panel">
+    <div class="track-panel__head">
+      <span class="track-panel__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-cpu" viewBox="0 0 24 24"><path d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2"/><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="8" height="8" x="8" y="8" rx="1"/></svg></span>
+      <h3 class="track-panel__title">CMU 15-213: Computer Systems</h3>
+    </div>
+    <div class="track-panel__meta">
+      <span><a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener">Course · Carnegie Mellon</a></span>
+      <span class="track-panel__count">0 / 7 labs</span>
+    </div>
+    <ul class="track-panel__list">
+      <li>Data Lab: bits and integers</li>
+      <li>Bomb Lab: machine code</li>
+      <li>Attack Lab: the stack</li>
+      <li>Cache Lab: memory hierarchy</li>
+    </ul>
+    <details class="track-panel__all">
+      <summary><span class="track-panel__show">Show all 7 labs <span>(+3)</span></span><span class="track-panel__hide">Show less</span></summary>
+      <ul class="track-panel__list">
+        <li>Shell Lab: processes and signals</li>
+        <li>Malloc Lab: dynamic memory</li>
+        <li>Proxy Lab: networking and concurrency</li>
+      </ul>
+    </details>
+    <span class="track-panel__btn track-panel__btn--soon">Notes &amp; labs · coming soon</span>
   </div>
   <div class="track-panel">
     <div class="track-panel__head">

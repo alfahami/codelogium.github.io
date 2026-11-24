@@ -69,6 +69,7 @@ const FOOTER_COLUMNS = [
       { label: 'CS Primer', href: 'https://csprimer.com/courses/' },
       { label: 'Teach Yourself CS', href: 'https://teachyourselfcs.com/' },
       { label: 'CS50 on edX', href: 'https://www.edx.org/cs50' },
+      { label: 'CMU 15-213', href: 'https://www.cs.cmu.edu/~213/' },
       { label: 'Martin Fowler', href: 'https://martinfowler.com/' },
       { label: 'SICP (MIT Press, free online)', href: 'https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html' },
     ],
