@@ -1425,58 +1425,29 @@ body:has(.article-hero) .md-content .md-typeset blockquote::before {
   line-height: 1.3;
 }
 
-.md-typeset.md-post__content h2 a.toclink {
-  color: inherit;
-}
-
-.md-typeset.md-post__content h2 a.toclink:hover {
-  color: var(--md-typeset-a-color, var(--md-primary-fg-color));
-}
-
 .md-typeset.md-post__content > p {
   font-size: 0.75rem;
   line-height: 1.65;
   color: var(--md-default-fg-color--light);
 }
 
-/* A quiet quote in the card, not the article's full green block */
-.md-typeset.md-post__content blockquote {
-  margin: 0 0 0.8rem;
-  padding: 0 0 0 0.8rem;
-  background: none;
-  box-shadow: none;
-  /* !important to beat the article quote's dark-mode border */
-  border: 0 !important;
-  border-left: 2px solid var(--md-accent-fg-color) !important;
-  font-size: 0.75rem;
-  font-style: italic;
-  color: var(--md-default-fg-color--light);
-}
-
-.md-typeset.md-post__content blockquote::before {
-  display: none;
-}
-
-.md-typeset.md-post__content blockquote p {
-  margin: 0;
-}
-
-.md-typeset .md-post__action {
-  margin-top: 0.6rem;
-}
-
-.md-typeset .md-post__action a {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.md-typeset.md-post__content h2 a {
+  color: inherit;
   text-decoration: none;
+}
+
+.md-typeset.md-post__content h2 a:hover {
   color: var(--md-typeset-a-color, var(--md-primary-fg-color));
 }
 
-.md-typeset .md-post__action a::after {
-  content: " ›";
+.md-typeset .md-post__action {
+  margin-top: 1rem;
+}
+
+/* A smaller button on the blog cards */
+.md-typeset .md-post__action a.home-btn {
+  padding: 0.6em 1em;
+  font-size: 0.68rem;
 }
 
 /* Project grid */
